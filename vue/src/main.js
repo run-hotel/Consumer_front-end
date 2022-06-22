@@ -1,35 +1,20 @@
 import Vue from "vue";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-//import * as echarts from "echarts";
 import App from "./App.vue";
 import router from "./router";
-import "./assets/fonts/iconfont.css";
+import store from "./store";
+import VueResource from "vue-resource";
+// import { VueAwesomeSwiper } from 'vue-awesome-swiper';
+// import 'swiper/dist/css/swiper.css'
 import "./assets/css/global.css";
-
-//导入验证码组件
-import SIdentify from "./components/page/Identify";
-Vue.component("SIdentify", SIdentify);
-// //前后端交互
-// import axios from "axios";
-// axios.defaults.baseURL = "http://127.0.0.1:3000/api/";
-// Vue.prototype.$http = axios;
-//
-Vue.prototype.$message = ElementUI.Message;
-Vue.config.productionTip = false;
+Vue.use(VueResource);
 Vue.use(ElementUI);
-router.beforeEach((to, from, next) => {
-  if (to.meta.logined) {
-    if (sessionStorage.getItem("login") === "1") {
-      next();
-    } else {
-      next({ path: "/hotellogin" });
-    }
-  } else {
-    next();
-  }
-});
+Vue.config.productionTip = false;
+// Vue.use(VueAwesomeSwiper)
 new Vue({
   router,
+  store,
   render: (h) => h(App),
 }).$mount("#app");
+//createApp(App).use(store).use(router).use(ElementUI,{locale,size:'small'}).mount('#app')

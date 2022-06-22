@@ -1,61 +1,78 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HotelLoginView from "../components/page/HotelLoginView.vue";
-import Home from "../components/page/Home.vue";
-import HotelHome from "../components/page/HotelHome.vue";
-import Welcome from "../components/page/Welcome.vue";
-//房间相关
-import RoomInfo from "../components/room/RoomInfo.vue";
-import RoomType from "../components/room/RoomType.vue";
-//订单相关
-import DealOrderInfo from "../components/order/DealOrderInfo.vue";
-import DirectDeal from "../components/order/DirectDeal.vue";
-//销售
-import MyHandel from "../components/order/MyHandel.vue";
-import Details from "../components/details/Details.vue";
-//测试样式
-import Test from "../components/test/Test.vue";
+import Layout from "../layout/Layout.vue";
+import Home from "../components/Home.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    redirect: "/hotellogin",
-  },
-  {
-    path: "/hotellogin",
-    //name: "home",
-    component: HotelLoginView,
-  },
-  {
-    path: "/home",
-    //name: "home",
-    component: Home,
-  },
-  {
-    path: "/hotelhome",
-    //name: "home",
-    component: HotelHome,
-    redirect: "/welcome",
-    meta: { logined: true },
+    path: "/layout",
+    name: "Layout",
+    component: Layout,
     children: [
-      { path: "/welcome", component: Welcome },
-      { path: "/room1", component: RoomInfo },
-      { path: "/room2", component: RoomType },
-      { path: "/dealOrder1", component: DealOrderInfo },
-      { path: "/dealOrder2", component: DirectDeal },
-      { path: "/myhandel", component: MyHandel },
-      { path: "/details", component: Details },
+      {
+        path: "/hotel",
+        name: "Hotel",
+        component: () => import("@/views/Hotel"),
+      },
+      {
+        path: "/detail",
+        name: "Detail",
+        component: () => import("@/views/Detail"),
+      },
+      {
+        path: "/order",
+        name: "Order",
+        component: () => import("@/views/Order"),
+      },
+      {
+        path: "/myOrder",
+        name: "MyOrder",
+        component: () => import("@/views/MyOrder"),
+      },
+      {
+        path: "/personalInfo",
+        name: "PersonalInfo",
+        component: () => import("@/views/PersonalInfo"),
+      },
+      {
+        path: "person",
+        name: "PersonalInfo",
+        component: () => import("@/views/PersonalInfo"),
+      },
     ],
   },
   {
-    path: "/test",
-    //name: "home",
-    component: Test,
+    path: "/",
+    name: "home",
+    component: Home,
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("@/views/Login"),
+  },
+  {
+    path: "/privacy",
+    name: "PrivacyPolicy",
+    component: () => import("@/views/PrivacyPolicy"),
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: () => import("@/views/Register"),
+  },
+  {
+    path: "/home",
+    name: "HomeView",
+    component: () => import("@/views/HomeView"),
   },
 ];
 
 const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
   routes,
 });
 

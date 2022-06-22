@@ -1,10 +1,11 @@
 <template>
-  <div id="app">
+  <div>
     <router-view />
   </div>
 </template>
 
-<style>
-@import "./assets/css/main.css";
-@import "./assets/css/color-green.css";
-</style>
+<script>
+export default {
+  name: "App",
+};
+</script>
