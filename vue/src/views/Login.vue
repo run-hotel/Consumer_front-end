@@ -23,6 +23,7 @@
               <el-input
                 v-model="form.customerphone"
                 class="text_5 text_6"
+                placeholder="请输入手机号"
               ></el-input>
             </div>
           </el-form-item>
@@ -36,6 +37,7 @@
                 v-model="form.customerpassword"
                 show-password
                 class="text_5 text_6"
+                placeholder="请输入密码"
               ></el-input>
             </div>
           </el-form-item>
@@ -549,6 +551,7 @@ input {
   margin-top: -25px;
   margin-left: 130px;
   flex: 1 1 auto;
+  transform: scale(0.8);
 }
 .group_9 {
   padding: 0 12.34px;

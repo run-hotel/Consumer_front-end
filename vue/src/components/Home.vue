@@ -37,15 +37,20 @@
         </div>
       </div>
       <div class="flex-row group_7 RightButtons">
-        <div class="flex-col items-center text-wrapper singIn">
+        <el-link
+          href="register"
+          :underline="false"
+          class="flex-col items-center text-wrapper singIn"
+        >
           <span class="text_4">SignUp</span>
-        </div>
-        <router-link
-          to="/login"
+        </el-link>
+        <el-link
+          href="login"
+          :underline="false"
           class="flex-col items-center text-wrapper_1 logIn"
         >
           <span class="text_5">LogIn</span>
-        </router-link>
+        </el-link>
       </div>
     </div>
     <div class="flex-col group_8">
