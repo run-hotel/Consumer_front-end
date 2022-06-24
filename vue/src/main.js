@@ -8,6 +8,11 @@ import VueResource from "vue-resource";
 // import { VueAwesomeSwiper } from 'vue-awesome-swiper';
 // import 'swiper/dist/css/swiper.css'
 import "./assets/css/global.css";
+
+//导入验证码组件
+import SIdentify from "./components/page/Identify";
+Vue.component("SIdentify", SIdentify);
+
 Vue.use(VueResource);
 Vue.use(ElementUI);
 Vue.config.productionTip = false;

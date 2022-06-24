@@ -42,13 +42,17 @@
             </div>
           </el-form-item>
         </div>
-        <div class="flex-row group_4">
-          <button class="flex-col group_5">
-            <div class="flex-row view-315XDzH1">
-              <span class="text_9 forget">忘掉密码?</span>
-            </div>
-          </button>
-        </div>
+        <el-form-item prop="validate" id="Verification">
+          <el-input
+            class="validate-code"
+            v-model="form.validate"
+            placeholder="验证码"
+            style="margin-right: 40px"
+          ></el-input>
+          <div class="code" @click="refreshCode">
+            <s-identify :identifyCode="identifyCode"></s-identify>
+          </div>
+        </el-form-item>
         <div class="flex-row group_7">
           <el-form-item class="flex-row group_7">
             <el-button
@@ -91,8 +95,19 @@ import request from "@/utils/request";
 export default {
   name: "Login",
   data() {
+    var validateV = (rule, value, callback) => {
+      if (value === "") {
+        callback(new Error("请输入验证码"));
+      } else if (value !== this.identifyCode) {
+        callback(new Error("验证码输入错误"));
+      } else {
+        callback();
+      }
+    };
     return {
-      form: {},
+      identifyCodes: "1234567890",
+      identifyCode: "",
+      form: { validate: "" },
       rules: {
         customerphone: [
           { required: true, message: "请输入手机号", trigger: "blur" },
@@ -100,10 +115,29 @@ export default {
         customerpassword: [
           { required: true, message: "请输入密码", trigger: "blur" },
         ],
+        validate: [{ validator: validateV, trigger: "blur" }],
       },
     };
   },
+  mounted() {
+    this.makeCode(this.identifyCodes, 4);
+  },
   methods: {
+    //随机数
+    randomNum(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    },
+    //验证码
+    makeCode(s, l) {
+      for (let i = 0; i < l; i++) {
+        this.identifyCode += s[this.randomNum(0, s.length)];
+      }
+    },
+    refreshCode() {
+      this.identifyCode = "";
+      this.makeCode(this.identifyCodes, 4);
+    },
+    //重置
     login() {
       this.$refs["form"].validate((valid) => {
         if (valid) {
@@ -132,6 +166,24 @@ export default {
 </script>
 
 <style scoped>
+#Verification {
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-items: center;
+}
+.validate-code {
+  width: 136px;
+  float: left;
+}
+/* 验证码样式 */
+.code {
+  width: 112px;
+  height: 35px;
+  border: 1px solid #ccc;
+  float: right;
+  border-radius: 2px;
+}
 html {
   font-size: 16px;
 }
