@@ -99,7 +99,7 @@
             class="flex-col items-center text-wrapper view-lpqp2X1q"
             type="primary"
             @click="register"
-            ><span class="text_11">登录</span></el-button
+            ><span class="text_11">注册</span></el-button
           >
         </el-form-item>
         <span class="text_12" style="cursor: default"

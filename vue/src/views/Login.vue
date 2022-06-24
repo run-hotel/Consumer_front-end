@@ -63,9 +63,12 @@
             >
           </el-form-item>
           <!-- button -->
-          <button class="flex-col items-center text-wrapper_1 view-mhXv1fEN">
+          <router-link
+            class="flex-col items-center text-wrapper_1 view-mhXv1fEN"
+            to="/register"
+          >
             <span class="text_12">注册</span>
-          </button>
+          </router-link>
         </div>
       </el-form>
     </div>
