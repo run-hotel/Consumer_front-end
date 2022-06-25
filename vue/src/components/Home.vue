@@ -388,25 +388,23 @@
           </div>
           <div class="flex-col buttonRightCards">
             <div class="flex-row section_8">
-              <span class="text_6 text_68 text_69">价格定位</span>
+              <span class="text_6 text_68 text_69">优惠政策</span>
               <img
                 src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
                 class="image_2 image_40"
               />
             </div>
             <div class="flex-row section_8">
-              <span class="text_6 text_68 text_70">预订流程</span>
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
-                class="image_2 image_40"
-              />
+              <el-link href="/preordain" :underline="false">
+                <span class="text_6 text_68 text_70">预订流程</span>
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
+                  class="image_2 image_40"
+                />
+              </el-link>
             </div>
             <div class="flex-row section_9">
-              <el-link
-                :underline="false"
-                href="privacy"
-                style="text-decoration: none"
-              >
+              <el-link :underline="false" href="privacy">
                 <span class="text_6 text_71">隐私条款</span>
                 <img
                   src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
@@ -1734,15 +1732,17 @@ body {
 .HeaderButtons {
   cursor: pointer;
 }
-.HeaderButtons,
+.HeaderButtons div {
+  width: 104px;
+  height: 44px;
+  padding: 10px 5px;
+}
 .HeaderButtons * {
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .HeaderButtons div:hover {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width: 104px;
-  height: 44px;
 }
 
 .RightButtons {

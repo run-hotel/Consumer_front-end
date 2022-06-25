@@ -2309,7 +2309,15 @@
                   </div>
                 </div>
                 <div class="flex-col items-center text-wrapper">
-                  <span class="text_14">new!!!</span>
+                  <iframe
+                    src="https://embed.lottiefiles.com/animation/110268"
+                    style="
+                      border: none;
+                      height: 100%;
+                      width: 100%;
+                      border-radius: 100px;
+                    "
+                  ></iframe>
                 </div>
               </div>
             </div>
@@ -2644,93 +2652,26 @@
             </div>
           </div>
           <div class="flex-col items-center group_39 view_16">
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419275741011421.png"
-              class="image_542"
-            />
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419276321024396.png"
-              class="image_544"
-            />
-            <div class="flex-row section_67">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419492758785630.png"
-                class="image_490 image_545"
-              />
-              <span class="text_48">My Topic...</span>
-            </div>
-            <div class="flex-row section_68">
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537420672787440857.png"
-                class="image_523"
-              />
-              <div class="flex-col items-start group_40">
-                <span class="text_49">Oliver</span>
-                <img
-                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419509279414824.png"
-                  class="image_547"
-                />
-              </div>
-            </div>
-            <div class="flex-row section_69">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419492797532566.png"
-                class="image_490 image_548"
-              />
-              <span class="text_50">Category...</span>
-            </div>
+            <iframe
+              src="https://embed.lottiefiles.com/animation/110264"
+              style="border: none; width: 100%; height: 100%"
+            ></iframe>
           </div>
         </div>
         <div class="justify-center group_41">
-          <div class="flex-col items-center group_39">
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419276433324480.png"
-              class="image_542"
-            />
-            <div class="flex-col items-start image-wrapper_148">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419510597600655.png"
-                class="image_550"
-              />
-            </div>
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419510846907769.png"
-              class="image_551"
-            />
-            <div class="flex-col items-end image-wrapper_149">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419493725414313.png"
-                class="image_552"
-              />
-            </div>
-            <div class="flex-row section_70">
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537420672796564579.png"
-                class="image_523 image_553"
-              />
-              <div class="flex-col group_42">
-                <span class="text_51">My Schedule</span>
-                <span class="text_52">My topic for next week...</span>
-              </div>
-            </div>
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419277248744086.png"
-              class="image_554"
-            />
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419278352557674.png"
-              class="image_555"
-            />
-            <div class="flex-row section_71">
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537420672797259186.png"
-                class="image_523"
-              />
-              <div class="flex-col items-start group_43">
-                <span class="text_53">Reminder</span>
-                <span class="text_54">You have 2 events coming up...</span>
-              </div>
-            </div>
+          <div
+            class="flex-col items-center group_39"
+            style="width: 600px; height: 600px"
+          >
+            <iframe
+              src="https://embed.lottiefiles.com/animation/5508"
+              style="
+                border: none;
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+              "
+            ></iframe>
           </div>
           <div class="flex-col view_18">
             <div class="view_19">
@@ -2770,137 +2711,65 @@
                   2、用户不得利用“已注册”账号或本服务制作、上载、复制、发布、传播如下法律、法规和政策禁止的内容：
                 </span>
                 <span class="text_66">(1) 反对宪法所确定的基本原则的；</span>
+                <span class="text_72"
+                  >(2)
+                  危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；</span
+                >
+                <span class="text_73">(3) 损害国家荣誉和利益的；</span>
+                <span class="text_74"
+                  >(4) 煽动民族仇恨、民族歧视，破坏民族团结的；</span
+                >
+                <span class="text_75"
+                  >(5) 破坏国家宗教政策，宣扬邪教和封建迷信的；</span
+                >
+                <span class="text_76"
+                  >(6) 散布谣言，扰乱社会秩序，破坏社会稳定的；</span
+                >
+                <span class="text_77"
+                  >(7)
+                  散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</span
+                >
+                <span class="text_78"
+                  >(8) 侮辱或者诽谤他人，侵害他人合法权益的；</span
+                >
+                <span class="text_79"
+                  >(9) 含有法律、行政法规禁止的其他内容的信息。</span
+                >
+                <span class="text_80">
+                  3、用户不得利用“已注册”账号或本服务制作、上载、复制、发布、传播如下干扰“服务”正常运营，以及侵犯其他用户或第三方合法权益的内容：
+                </span>
+                <span class="text_81">(1) 含有任何性或性暗示的；</span>
+                <span class="text_82">(2) 含有辱骂、恐吓、威胁内容的；</span>
+                <span class="text_83"
+                  >(3) 含有骚扰、垃圾广告、恶意信息、诱骗信息的；</span
+                >
+                <span class="text_84"
+                  >(4) 涉及他人隐私、个人信息或资料的；</span
+                >
+                <span class="text_85"
+                  >(5)
+                  侵害他人名誉权、肖像权、知识产权、商业秘密等合法权利的；</span
+                >
+                <span class="text_86"
+                  >(6)
+                  含有其他干扰本服务正常运营和侵犯其他用户或第三方合法权益内容的信息。</span
+                >
               </div>
             </div>
-            <div class="flex-col items-center group_51">
-              <div class="flex-col items-start section_72">
-                <div class="flex-col items-center section_73">
-                  <img
-                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419494523361810.png"
-                    class="image_557"
-                  />
-                  <div class="flex-row section_74">
-                    <img
-                      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419513047546057.png"
-                      class="image_558"
-                    />
-                    <span class="text_67">LIVE</span>
-                  </div>
-                </div>
-              </div>
-              <div class="flex-col section_75">
-                <div class="flex-row section_76">
-                  <img
-                    src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537420672813960110.png"
-                    class="image_523 image_559"
-                  />
-                  <div class="flex-col items-start group_52">
-                    <span class="text_68">Mark</span>
-                    <img
-                      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419513374837920.png"
-                      class="image_560"
-                    />
-                  </div>
-                </div>
-                <div class="flex-row section_77">
-                  <div class="flex-col items-center image-wrapper_150 view_21">
-                    <img
-                      src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537420672828241115.png"
-                      class="image_561"
-                    />
-                  </div>
-                  <div class="flex-col items-center image-wrapper_150 view_22">
-                    <img
-                      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419532308077803.png"
-                      class="image_562"
-                    />
-                  </div>
-                  <div class="flex-col items-center image-wrapper_150 view_23">
-                    <img
-                      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419532346036978.png"
-                      class="image_562"
-                    />
-                  </div>
-                  <div class="flex-col items-center image-wrapper_150 view_24">
-                    <img
-                      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419533559969052.png"
-                      class="image_562"
-                    />
-                  </div>
-                  <div class="flex-col items-center image-wrapper_150 view_25">
-                    <img
-                      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419533695354516.png"
-                      class="image_562"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="justify-center section_78">
-                <img
-                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537420672791807203.png"
-                  class="image_523 image_567"
-                />
-                <div class="flex-col items-start group_53">
-                  <span class="text_69">Layla</span>
-                  <img
-                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537419514621136434.png"
-                    class="image_568"
-                  />
-                </div>
-              </div>
-              <div class="justify-center section_79">
-                <img
-                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16537420672804157969.png"
-                  class="image_523"
-                />
-                <div class="flex-col items-start group_54">
-                  <span class="text_70">Steven</span>
-                  <span class="text_71">Need more of this❗</span>
-                </div>
-              </div>
+            <div
+              class="flex-col items-center group_51"
+              style="width: 600px; height: 600px"
+            >
+              <iframe
+                src="https://embed.lottiefiles.com/animation/49999"
+                style="
+                  border: none;
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 20px;
+                "
+              ></iframe>
             </div>
-          </div>
-          <div class="flex-col view_26">
-            <span class="text_72"
-              >(2)
-              危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；</span
-            >
-            <span class="text_73">(3) 损害国家荣誉和利益的；</span>
-            <span class="text_74"
-              >(4) 煽动民族仇恨、民族歧视，破坏民族团结的；</span
-            >
-            <span class="text_75"
-              >(5) 破坏国家宗教政策，宣扬邪教和封建迷信的；</span
-            >
-            <span class="text_76"
-              >(6) 散布谣言，扰乱社会秩序，破坏社会稳定的；</span
-            >
-            <span class="text_77"
-              >(7) 散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</span
-            >
-            <span class="text_78"
-              >(8) 侮辱或者诽谤他人，侵害他人合法权益的；</span
-            >
-            <span class="text_79"
-              >(9) 含有法律、行政法规禁止的其他内容的信息。</span
-            >
-            <span class="text_80">
-              3、用户不得利用“已注册”账号或本服务制作、上载、复制、发布、传播如下干扰“服务”正常运营，以及侵犯其他用户或第三方合法权益的内容：
-            </span>
-            <span class="text_81">(1) 含有任何性或性暗示的；</span>
-            <span class="text_82">(2) 含有辱骂、恐吓、威胁内容的；</span>
-            <span class="text_83"
-              >(3) 含有骚扰、垃圾广告、恶意信息、诱骗信息的；</span
-            >
-            <span class="text_84">(4) 涉及他人隐私、个人信息或资料的；</span>
-            <span class="text_85"
-              >(5)
-              侵害他人名誉权、肖像权、知识产权、商业秘密等合法权利的；</span
-            >
-            <span class="text_86"
-              >(6)
-              含有其他干扰本服务正常运营和侵犯其他用户或第三方合法权益内容的信息。</span
-            >
           </div>
         </div>
       </div>
@@ -12637,7 +12506,9 @@ body {
 }
 
 .view_16 {
+  width: 600px;
   margin-left: 89.47px;
+  height: 600px;
 }
 
 .view_18 {
@@ -12784,11 +12655,9 @@ body {
 }
 
 .text-wrapper {
-  padding: 77.73px 0 80.27px;
-  background-color: rgb(250, 84, 75);
-  border-radius: 999px;
   overflow: hidden;
-  width: 180px;
+  width: 150px;
+  height: 150px;
   position: absolute;
   right: 440px;
   top: 0;

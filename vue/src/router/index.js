@@ -44,6 +44,11 @@ const routes = [
     ],
   },
   {
+    path: "/preferential",
+    name: "Preferential",
+    component: () => import("@/views/Preferential"),
+  },
+  {
     path: "/",
     name: "home",
     component: Home,
@@ -67,6 +72,11 @@ const routes = [
     path: "/home",
     name: "HomeView",
     component: () => import("@/views/HomeView"),
+  },
+  {
+    path: "/preordain",
+    name: "Preordain",
+    component: () => import("@/views/Preordain"),
   },
 ];
 

@@ -69,6 +69,7 @@ export default {
   position: relative;
 }
 #Wrapper #Content #WalletWrapper #Wallet #pricing {
+  transform: scale(0.87);
   z-index: 100;
   position: relative;
   width: 40px;

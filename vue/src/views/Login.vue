@@ -557,8 +557,8 @@ input {
 }
 .group_15 {
   margin-top: 110.12px;
-  padding: 10px 7.72px 0;
-  height: 200px;
+  padding: 60px;
+  /* height: 200px; */
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .group_2 {
@@ -571,8 +571,6 @@ input {
 .group_4 {
   margin-top: 28px;
   padding: 0 7px;
-}
-.group_7 {
 }
 .group_8 {
   padding-bottom: 2.64px;
@@ -646,7 +644,7 @@ input {
   backdrop-filter: blur(40px);
   border-radius: 0px 30px 30px 30px;
   transform: translateX(20px);
-  cursor: pointer;
+  cursor: default;
 }
 .Text:hover {
   transform: translateX(10px) translateY(10px);
