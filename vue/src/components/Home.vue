@@ -388,11 +388,13 @@
           </div>
           <div class="flex-col buttonRightCards">
             <div class="flex-row section_8">
-              <span class="text_6 text_68 text_69">优惠政策</span>
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
-                class="image_2 image_40"
-              />
+              <el-link href="/preferential" :underline="false">
+                <span class="text_6 text_68 text_69">优惠政策</span>
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
+                  class="image_2 image_40"
+                />
+              </el-link>
             </div>
             <div class="flex-row section_8">
               <el-link href="/preordain" :underline="false">

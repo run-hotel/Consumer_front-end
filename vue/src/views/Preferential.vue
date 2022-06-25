@@ -130,7 +130,7 @@
             src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437210776052671.png"
             class="image_20"
           />
-          <div class="flex-col group_5">
+          <div class="flex-col group_5" style="position: relative">
             <span class="text_2 text_12">还没有一个账号？</span>
             <span class="text_13">Get certificates</span>
             <span class="text_14"
@@ -144,6 +144,7 @@
               <span class="text_15">Create account</span>
             </div>
           </div>
+          <BackButton style="position: absolute; z-index: 1000; top: 350px" />
         </div>
       </div>
     </div>
@@ -152,6 +153,7 @@
 
 <script>
 import Card from "./smc_components/Card.vue";
+import BackButton from "./smc_components/BackButton.vue";
 export default {
   data() {
     return {
@@ -188,6 +190,7 @@ export default {
   },
   components: {
     Card,
+    BackButton,
   },
 };
 </script>
