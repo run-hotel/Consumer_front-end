@@ -55,14 +55,19 @@
     </div>
     <div class="flex-col group_8">
       <div class="flex-col" style="position: relative">
-        <img
-          src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995271625563535.png"
-          class="image_6"
-        />
-        <PurchaseButton
-          style="left: 580px; top: 435px"
-          :bookHotel="bookHotel"
-        />
+        <div class="image_6">
+          <div class="ContentWrapper">
+            <div class="TopTip">
+              <span class="topTitle">艾迪花园酒店</span>
+              <span class="description">“艾迪无锡 · 创意无限”</span>
+              <span class="description"
+                >艾迪花园酒店是您追求完美的理想之园</span
+              >
+              <span class="description">“因为爱，所以来”</span>
+            </div>
+            <PurchaseButton :bookHotel="bookHotel" />
+          </div>
+        </div>
         <div class="flex-col section_3" ref="showHome">
           <div class="flex-col items-center group_10">
             <span class="text_6 text_7">农家品质起航</span>
@@ -472,6 +477,25 @@ export default {
 ** 请将全局样式拷贝到项目的全局 CSS 文件或者当前页面的顶部 **
 ** 否则页面将无法正常显示                                  **
 ************************************************************/
+.ContentWrapper {
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-items: center;
+  gap: 60px;
+}
+.description {
+  font-family: "ABeeZee";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  /* or 22px */
+
+  text-align: center;
+
+  color: #ffffff;
+}
 
 html {
   font-size: 16px;
@@ -553,6 +577,32 @@ body {
 }
 .text_6 {
   text-transform: capitalize;
+}
+.topTitle {
+  font-family: "ABeeZee";
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 71px;
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.TopTip {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 60px 0px 60px 60px;
+  padding: 50px;
 }
 
 .text {
@@ -696,6 +746,11 @@ body {
 }
 
 .image_6 {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-image: url("@/img/backImage.svg");
   width: 100vw;
   height: 51.0417vw;
 }

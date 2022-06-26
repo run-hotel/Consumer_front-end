@@ -29,7 +29,7 @@ export default {
 <style scoped>
 #Wrapper {
   cursor: pointer;
-  position: absolute;
+  position: relative;
 }
 #Wrapper *,
 #Wrapper {
