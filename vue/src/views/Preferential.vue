@@ -3,7 +3,13 @@
     <div class="TopWrapper">
       <div class="ContentWrapper">
         <div class="TextWrapper">
-          <span class="title">艾迪花园</span>
+          <div class="title">
+            艾迪花园
+            <iframe
+              src="https://embed.lottiefiles.com/animation/7893"
+              style="position: absolute; left: 50px; border: none"
+            ></iframe>
+          </div>
           <span class="content">优惠政策</span>
           <span class="description">凭学生证可到前台进一步享受学生优惠</span>
         </div>
@@ -16,71 +22,29 @@
     </div>
     <div class="flex-col page">
       <div class="flex-col items-start group">
-        <img
-          src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437199470950207.png"
-          class="image"
-        />
+        <img src="@/img/wave3.svg" class="image" />
         <div class="flex-col items-start image-wrapper">
-          <img
-            src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437199474847283.png"
-            class="image_1"
-          />
+          <img src="@/img/waves/certificate-wave3.svg" class="image_1" />
         </div>
         <div class="section_1">
-          <img
-            src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437213163467556.png"
-            class="image_2"
-          />
+          <img src="@/img/image2.svg" class="image_2" />
           <div class="flex-col items-start image-wrapper_1">
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437214016350772.png"
-              class="image_3"
-            />
+            <img src="@/img/image3.svg" class="image_3" />
           </div>
-          <img
-            src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437215022109286.png"
-            class="image_5"
-          />
-          <img
-            src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437213163467556.png"
-            class="image_6"
-          />
+          <img src="@/img/image5.svg" class="image_5" />
+          <img src="@/img/image2.svg" class="image_6" />
           <div class="flex-col items-start image-wrapper_2">
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437214016350772.png"
-              class="image_3"
-            />
+            <img src="@/img/image3.svg" class="image_3" />
           </div>
-          <img
-            src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437215022109286.png"
-            class="image_8"
-          />
+          <img src="@/img/image5.svg" class="image_8" />
           <div class="flex-col items-end section_2">
             <div class="flex-row group_1">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437215372056289.png"
-                class="image_9"
-              />
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437217498017370.png"
-                class="image_10"
-              />
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561635524215728827.png"
-                class="image_11"
-              />
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437217908771816.png"
-                class="image_12"
-              />
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437219762734553.png"
-                class="image_13"
-              />
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437219803619853.png"
-                class="image_14"
-              />
+              <img src="@/img/square.svg" class="image_9" />
+              <img src="@/img/apple.svg" class="image_10" />
+              <img src="@/img/facebook.svg" class="image_11" />
+              <img src="@/img/airbnb.svg" class="image_12" />
+              <img src="@/img/google.svg" class="image_13" />
+              <img src="@/img/amazon.svg" class="image_14" />
             </div>
           </div>
           <div class="flex-col items-end section_3">
@@ -88,10 +52,7 @@
             <img src="@/img/Mockup.svg" class="image_15" />
           </div>
           <div class="flex-col section_4">
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437224139847543.png"
-              class="image_16"
-            />
+            <img src="@/img/user1.svg" class="image_16" />
             <span class="text_1">摆烂小子</span>
             <span class="text_2 text_3">DESIGNER AT BLUSH</span>
             <span class="text_4">
@@ -99,10 +60,7 @@
             </span>
           </div>
           <div class="flex-col section_5">
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437224298893509.png"
-              class="image_16"
-            />
+            <img src="@/img/user2.svg" class="image_16" />
             <span class="text_6">Liu Yi</span>
             <span class="text_7">FOUNDER OF PRICE TAG</span>
             <span class="text_4">
@@ -121,17 +79,14 @@
         </div>
       </div>
       <div class="flex-col items-start group_4">
-        <img
-          src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437209189682339.png"
-          class="image_19"
-        />
+        <img src="@/img/waves/certificate-wave4.svg" class="image_19" />
         <div class="justify-center section_6">
-          <img
-            src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437210776052671.png"
+          <iframe
+            src="https://embed.lottiefiles.com/animation/1708"
             class="image_20"
-          />
+          ></iframe>
+
           <div class="flex-col group_5" style="position: relative">
-            <span class="text_2 text_12">还没有一个账号？</span>
             <span class="text_13">Get certificates</span>
             <span class="text_14"
               >入住成功后，我们将为每个人授予一张印记。以此来证明您们曾入住过本酒店</span
@@ -141,7 +96,7 @@
                 src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437265897071856.png"
                 class="image_21"
               />
-              <span class="text_15">Create account</span>
+              <span class="text_15">查看印记模板</span>
             </div>
           </div>
           <BackButton style="position: absolute; z-index: 1000; top: 350px" />
@@ -199,7 +154,6 @@ export default {
 .TopWrapper {
   background-image: url("@/img/Waves.svg");
   background-size: cover;
-  height: 1600px;
 }
 .ContentWrapper {
   display: grid;
@@ -221,6 +175,7 @@ export default {
   line-height: 130%;
   color: #fbd8c6;
   text-align: center;
+  position: relative;
 }
 .content {
   font-family: "Hannotate SC";
@@ -353,6 +308,7 @@ html {
   overflow-x: hidden;
 }
 .group {
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   padding: 1421px 0 216px;
   overflow-x: hidden;
   position: relative;
@@ -370,9 +326,7 @@ html {
 }
 .image-wrapper {
   padding-top: 140px;
-  background-image: url("https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437199477322403.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-image: url("@/img/waves/certificate-wave2.svg");
   height: 605px;
   position: absolute;
   left: -68px;
@@ -426,7 +380,7 @@ html {
   padding-top: 10px;
   opacity: 0.2;
   filter: drop-shadow(0px 0px 89.37px #21396f4d);
-  background-image: url("https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437213487221640.png");
+  background-image: url("@/img/image2.svg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 444px;
@@ -459,7 +413,7 @@ html {
   padding-top: 10px;
   opacity: 0.2;
   filter: drop-shadow(0px 0px 89.37px #21396f4d);
-  background-image: url("https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437213487221640.png");
+  background-image: url("@/img/image3.svg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 444px;
@@ -489,9 +443,7 @@ html {
 }
 .section_3 {
   padding: 1444.5px 0 5.5px;
-  background-image: url("https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561635524113575958.png");
   background-size: 100% 100%;
-  background-repeat: no-repeat;
   position: absolute;
   left: -725px;
   right: -141px;
@@ -533,8 +485,8 @@ html {
   top: 943.5px;
 }
 .image_20 {
-  width: 640px;
-  height: 280px;
+  border: none;
+  height: 300px;
 }
 .group_5 {
   margin-left: 61px;
@@ -631,16 +583,18 @@ html {
   line-height: 27px;
 }
 .section_7 {
-  margin-top: 16.5px;
-  padding: 13px 14px 12px;
-  align-self: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 16px 10px;
   background-image: linear-gradient(180deg, #17204f66 0%, #17204f40 100%);
   border-radius: 30px;
-  box-shadow: 0px 20px 40px #00000026;
   backdrop-filter: blur(20px);
-  overflow: hidden;
-  width: 183px;
-  border: solid 0.5px #0000004d;
+  width: 180px;
+  border: none;
 }
 .image_9 {
   margin: 6.5px 0;
@@ -695,10 +649,10 @@ html {
   height: 18px;
 }
 .text_15 {
-  margin: 3.5px 0 3.5px 11.5px;
   color: #ffffff;
   font-size: 15px;
   font-family: SF Pro Text;
   line-height: 11px;
+  overflow: initial;
 }
 </style>

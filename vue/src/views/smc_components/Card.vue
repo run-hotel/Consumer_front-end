@@ -88,7 +88,7 @@ export default {
   font-family: "SF Pro Display";
   font-style: normal;
   font-weight: 600;
-  font-size: 60px;
+  font-size: 50px;
   line-height: 72px;
 
   color: #000000;
