@@ -91,13 +91,15 @@
             <span class="text_14"
               >入住成功后，我们将为每个人授予一张印记。以此来证明您们曾入住过本酒店</span
             >
-            <div class="flex-row section_7">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437265897071856.png"
-                class="image_21"
-              />
-              <span class="text_15">查看印记模板</span>
-            </div>
+            <el-link href="/certificatetemplate" :underline="false">
+              <div class="flex-row section_7">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16561437265897071856.png"
+                  class="image_21"
+                />
+                <span class="text_15">点击预览</span>
+              </div>
+            </el-link>
           </div>
           <BackButton style="position: absolute; z-index: 1000; top: 350px" />
         </div>
@@ -345,7 +347,7 @@ html {
 }
 .image_19 {
   margin-left: -32px;
-  filter: blur(75px);
+  filter: blur(28px);
   width: 114.8611vw;
   height: 35.3535vw;
 }

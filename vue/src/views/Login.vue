@@ -1,5 +1,6 @@
 <template>
   <div class="justify-between page">
+    <LoadingCard ref="Load" style="display: none" />
     <div class="flex-col group">
       <div class="flex-col items-start group_15 view-dL5R0iFd">
         <span class="text_1 Text">Log In...</span><br />
@@ -95,6 +96,7 @@
 
 <script>
 import request from "@/utils/request";
+import LoadingCard from "@/views/smc_components/LoadingCard.vue";
 export default {
   name: "Login",
   data() {
@@ -125,6 +127,9 @@ export default {
   mounted() {
     this.makeCode(this.identifyCodes, 4);
   },
+  components: {
+    LoadingCard,
+  },
   methods: {
     //随机数
     randomNum(min, max) {
@@ -146,14 +151,13 @@ export default {
         if (valid) {
           request.post("/customer/login", this.form).then((res) => {
             if (res.code === "0") {
-              this.$message({
-                type: "success",
-                message: "登录成功",
-              });
               sessionStorage.setItem("customerphone", this.form.customerphone);
               console.log(this.form.customerphone);
               //sessionStorage.setItem("ms_username", ret.data.username);
-              this.$router.push("/hotel"); //登录成功后跳转页面
+              this.$refs.Load.showLoading();
+              setTimeout(() => {
+                this.$router.push("/hotel"); //登录成功后跳转页面
+              }, 2500);
             } else {
               this.$message({
                 type: "error",
@@ -183,9 +187,8 @@ export default {
 .code {
   width: 112px;
   height: 35px;
-  border: 1px solid #ccc;
   float: right;
-  border-radius: 2px;
+  border: none;
 }
 html {
   font-size: 16px;

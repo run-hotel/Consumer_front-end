@@ -1,5 +1,6 @@
 <template>
   <div class="flex-col page">
+    <SignUpCard ref="SignUp" style="left: 40%; top: 10%; display: none" />
     <div class="flex-col items-center section_1">
       <img
         src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/6274b8cb3051170011fb085d/16529638214180901831.png"
@@ -131,8 +132,12 @@
 
 <script>
 import request from "@/utils/request";
+import SignUpCard from "@/views/smc_components/SignUpCard.vue";
 export default {
   name: "Register",
+  components: {
+    SignUpCard,
+  },
   data() {
     var checkMobile = (rule, value, callback) => {
       const regMobile =
@@ -174,11 +179,10 @@ export default {
           console.log(this.form);
           request.post("/customer/register", this.form).then((res) => {
             if (res.code === "0") {
-              this.$message({
-                type: "success",
-                message: "注册成功",
-              });
-              this.$router.push("/login"); //登录成功后跳转页面
+              this.$refs.SignUp.showSignUp();
+              setTimeout(() => {
+                this.$router.push("/login"); //登录成功后跳转页面
+              }, 2200);
             } else {
               this.$message({
                 type: "error",

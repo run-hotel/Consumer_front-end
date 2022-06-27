@@ -49,6 +49,11 @@ const routes = [
     component: () => import("@/views/Preferential"),
   },
   {
+    path: "/certificatetemplate",
+    name: "CertificateTemplate",
+    component: () => import("@/views/smc_components/CertificateTemplate.vue"),
+  },
+  {
     path: "/",
     name: "home",
     component: Home,

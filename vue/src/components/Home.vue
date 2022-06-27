@@ -3,14 +3,10 @@
     <div class="justify-between section_1">
       <div class="flex-row">
         <div class="flex-row group_1">
-          <img
-            src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395082398390.png"
-            class="image"
-          />
-          <img
-            src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395080194353.png"
-            class="image_1"
-          />
+          <iframe
+            src="https://embed.lottiefiles.com/animation/45893"
+            style="border: none; width: 40px; height: 40px"
+          ></iframe>
         </div>
         <div class="flex-row group_2 HeaderButtons">
           <div class="flex-row group_4 topButton" @click="goUp">
@@ -71,7 +67,12 @@
         <div class="flex-col section_3" ref="showHome">
           <div class="flex-col items-center group_10">
             <span class="text_6 text_7">农家品质起航</span>
-            <span class="text_6 text_8">企业文化</span>
+            <span class="text_6 text_8" style="position: relative"
+              >企业文化<iframe
+                src="https://embed.lottiefiles.com/animation/1370"
+                style="position: absolute; border: none; left: 10px; top: -50px"
+              ></iframe>
+            </span>
           </div>
           <div class="flex-col group_11">
             <div class="justify-between group_12">
@@ -109,7 +110,12 @@
         </div>
         <div class="flex-col section_4">
           <span class="text_6 text_18">主要介绍</span>
-          <span class="text_6 text_19">艾迪花园酒店带您开启品质生活</span>
+          <span class="text_6 text_19" style="position: relative"
+            >艾迪花园酒店带您开启品质生活<iframe
+              src="https://embed.lottiefiles.com/animation/71540"
+              style="position: absolute"
+            ></iframe
+          ></span>
           <span class="text_6 text_20">Be Love Be here</span>
           <div class="flex-col group_17">
             <div class="justify-between group_18">
@@ -176,7 +182,7 @@
         </div>
         <div class="flex-col section_5">
           <div class="flex-col items-center text-wrapper_4">
-            <span class="text_33">酒店设施</span>
+            <span class="text_33">酒店设施 </span>
           </div>
         </div>
       </div>
@@ -190,12 +196,25 @@
               />
               <span class="text_34">游泳池</span>
             </div>
-            <div class="flex-col items-center group_31">
+            <div
+              class="flex-col items-center group_31"
+              style="position: relative"
+            >
               <img
                 src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995333350901149.png"
                 class="image_15 border"
               />
               <span class="text_35">健身房</span>
+              <iframe
+                src="https://embed.lottiefiles.com/animation/53617"
+                style="
+                  position: absolute;
+                  left: 550px;
+                  top: -100px;
+                  width: 250px;
+                  height: 250px;
+                "
+              ></iframe>
             </div>
           </div>
           <div class="flex-col group_32">
@@ -751,7 +770,9 @@ body {
   justify-items: center;
   align-items: center;
   background-image: url("@/img/backImage.svg");
-  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
   height: 51.0417vw;
 }
 
