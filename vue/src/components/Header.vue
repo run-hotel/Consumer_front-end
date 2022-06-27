@@ -18,28 +18,21 @@
       一家酒店
     </div>
     <div style="flex: 1"></div>
-    <div>
-      <el-link
-        href="login"
-        style="text-decoration: none; color: black; font-size: 15px"
-        >登录</el-link
-      >
-    </div>
     <div style="flex: 0.05"></div>
     <div>
       <el-link
-        href="register"
+        href="personalInfo"
         style="text-decoration: none; color: black; font-size: 15px"
-        >注册</el-link
+        >个人信息</el-link
       >
     </div>
     <div style="flex: 0.05"></div>
 
     <div>
-      <span
-        style="text-decoration: none; color: black; font-size: 15px"
+      <el-link
         @click="out"
-        >退出系统</span
+        style="text-decoration: none; color: black; font-size: 15px"
+        >退出系统</el-link
       >
     </div>
     <div style="flex: -0.5"></div>

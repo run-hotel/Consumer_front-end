@@ -15,6 +15,14 @@
         </template>
       </el-table-column>
     </el-table>
+    <div v-if="showCard" class="Wrapper">
+      <el-link href="/certificate" :underline="false">
+        <div class="ContentErapper">
+          <img src="@/img/King.svg" alt="King" />
+          <div class="Text">查看证书</div>
+        </div>
+      </el-link>
+    </div>
   </div>
 </template>
 
@@ -32,6 +40,7 @@ export default {
       total: 0,
       tableData: [],
       customerphone: sessionStorage.getItem("customerphone"),
+      showCard: false,
     };
   },
   created() {
@@ -50,8 +59,41 @@ export default {
           console.log(res);
           this.tableData = res.data;
           this.total = res.data.length;
+          this.tableData.forEach((element) => {
+            if (element.orderstatus == "0") this.showCard = true;
+          });
         });
     },
   },
 };
 </script>
+<style scoped>
+* {
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.Wrapper {
+  margin-top: 2%;
+  cursor: pointer;
+  width: 140px;
+  padding: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(24, 32, 79, 0.4) 0%,
+    rgba(24, 32, 79, 0.25) 100%
+  );
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(40px);
+  border-radius: 30px;
+}
+.Wrapper:hover {
+  transform: scale(1.1);
+}
+.ContentErapper {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+}
+</style>

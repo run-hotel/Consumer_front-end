@@ -1443,7 +1443,7 @@
           <div class="flex-col section_29">
             <div class="flex-col group_2">
               <div class="flex-col items-center group_3">
-                <span class="text_1">&amp;</span>
+                <span class="text_1"> &nbsp;</span>
               </div>
               <div class="flex-col items-center group_77">
                 <span class="text">隐私条款</span>

@@ -12,22 +12,27 @@
       <div class="Descriptions">
         <div class="DesDescription">
           <div class="topDescription">这是为了证明</div>
-          <div class="Username">xxxxxx</div>
+          <div class="Username">{{ userPhone }}</div>
           <div class="footerGrid">
             <div class="footerNormal">入住</div>
             <div class="HotelName">艾登花园酒店</div>
-            <div class="footerNormal">on dd-mm-yy week</div>
+            <div class="footerNormal">on {{ LiveTime }}</div>
           </div>
         </div>
       </div>
       <div class="bottomGrid">
         <div class="Bottom">
           <div class="Issuer" id="bottomTxt">颁发人:</div>
-          <div class="Hotel" id="bottomTxt">艾登花园酒店</div>
+          <div class="Hotel" id="bottomTxtHotel">艾登花园酒店</div>
         </div>
         <div class="Bottom">
-          <div class="Number" id="bottomTxt">订单编号：xxxxxxx</div>
-          <div class="MoreImformation" id="bottomTxt">详细信息：xxxxxxx</div>
+          <div class="Number" id="bottomTxt">
+            证书编号：{{ Orderno.toUpperCase() }}
+          </div>
+          详细信息：
+          <router-link to="/preferential" class="MoreImformation"
+            >查看更多</router-link
+          >
         </div>
       </div>
       <div class="footer"></div>
@@ -36,7 +41,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["userPhone", "LiveTime", "Orderno"],
+};
 </script>
 
 <style scoped>
@@ -155,12 +162,19 @@ export default {};
   border-radius: 10px;
   padding: 10px;
 }
-#bottomTxt {
-  font-family: "ABeeZee";
+.MoreImformation {
+  text-decoration: none;
+  font-family: "SF Pro Text";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 13px;
   line-height: 130%;
-  color: rgba(0, 0, 0, 0.7);
+  color: #00cffd;
+}
+#bottomTxtHotel {
+  font-family: "LingWai SC";
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 130%;
 }
 </style>

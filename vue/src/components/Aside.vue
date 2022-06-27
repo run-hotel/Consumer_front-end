@@ -8,9 +8,6 @@
     >
       <el-submenu index="1">
         <template slot="title">个人中心</template>
-        <el-menu-item index="user" @click.native="$router.push('/personalInfo')"
-          >个人信息</el-menu-item
-        >
         <el-menu-item index="user" @click.native="$router.push('/myOrder')"
           >我的订单</el-menu-item
         >

@@ -19,7 +19,7 @@
               @click="
                 order(orderscope.row.roomtypename, orderscope.row.roomprice)
               "
-              v-if="orderscope.row.roomnumber == 0"
+              v-if="orderscope.row.roomnumber <= 0"
               disabled
             >
               下单
@@ -68,7 +68,11 @@
             ></el-input>
           </el-form-item>
           <el-form-item label="订单号">
-            <el-input type="text" v-model="OrderForm.orderno"></el-input>
+            <el-input
+              type="text"
+              v-model="OrderForm.orderno"
+              disabled
+            ></el-input>
           </el-form-item>
           <el-form-item label="入住时间">
             <el-date-picker type="date" v-model="OrderForm.inttime">
@@ -90,6 +94,7 @@
 
 <script>
 import request from "@/utils/request";
+import axios from "axios";
 export default {
   data() {
     return {
@@ -119,7 +124,7 @@ export default {
       });
     },
     order(roomtypename, roomprice) {
-      if (this.RoomTypeData.roomnumber === 0) {
+      if (this.RoomTypeData.roomnumber <= 0) {
         this.$message({
           type: "error",
           message: "房间数量不足了",
@@ -136,9 +141,47 @@ export default {
             message: "请您先登录",
           });
         } else {
+          this.OrderForm.orderno = this.randomCoding();
           this.dialogVisible = true;
         }
       }
+    },
+    randomCoding() {
+      //创建26个字母数组
+      var arr = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+      ];
+      var idvalue = "";
+      const n = 10;
+      for (var i = 0; i < n; i++) {
+        idvalue += arr[Math.floor(Math.random() * 26)];
+      }
+      return idvalue;
     },
     PlaceOrder() {
       console.log(this.OrderForm);
@@ -156,6 +199,17 @@ export default {
         }
         console.log(res);
       });
+      request
+        .get("/alipay/pay", this.OrderForm)
+        .then((response) => {
+          var form = response.data;
+          const div = document.createElement("div"); //创建div
+          div.innerHTML = form; //将返回的form 放入div
+          document.body.appendChild(div);
+        })
+        .catch(function (error) {
+          alert("失败", error);
+        });
     },
   },
 };
