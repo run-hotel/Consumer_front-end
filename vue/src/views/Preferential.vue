@@ -329,7 +329,6 @@ html {
 .image-wrapper {
   padding-top: 140px;
   background-image: url("@/img/waves/certificate-wave2.svg");
-  height: 605px;
   position: absolute;
   left: -68px;
   right: -14px;
@@ -348,8 +347,7 @@ html {
 .image_19 {
   margin-left: -32px;
   filter: blur(28px);
-  width: 114.8611vw;
-  height: 35.3535vw;
+  width: 100%;
 }
 .section_6 {
   padding: 19.5px 179px 129.5px;
