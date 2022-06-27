@@ -92,9 +92,12 @@ export default {
   animation-fill-mode: both !important;
   -webkit-animation-fill-mode: both !important;
 }
+<<<<<<< HEAD
 .Shot:hover {
   transform: scale(1.2);
 }
+=======
+>>>>>>> main
 .ShotImage {
   background-size: 100%;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
