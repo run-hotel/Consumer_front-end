@@ -83,6 +83,11 @@ const routes = [
     name: "Preordain",
     component: () => import("@/views/Preordain"),
   },
+  {
+    path: "/certificate",
+    name: "Certificate",
+    component: () => import("@/views/smc_components/Certificate"),
+  },
 ];
 
 const router = new VueRouter({

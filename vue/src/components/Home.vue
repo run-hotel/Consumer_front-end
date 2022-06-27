@@ -209,7 +209,7 @@
                 src="https://embed.lottiefiles.com/animation/53617"
                 style="
                   position: absolute;
-                  left: 550px;
+                  left: 350px;
                   top: -100px;
                   width: 250px;
                   height: 250px;
