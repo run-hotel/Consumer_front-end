@@ -12,26 +12,17 @@
       <div class="Descriptions">
         <div class="DesDescription">
           <div class="topDescription">这是为了证明</div>
-<<<<<<< HEAD
           <div class="Username">{{ userPhone }}</div>
           <div class="footerGrid">
             <div class="footerNormal">入住</div>
             <div class="HotelName">艾登花园酒店</div>
             <div class="footerNormal">on {{ LiveTime }}</div>
-=======
-          <div class="Username">xxxxxx</div>
-          <div class="footerGrid">
-            <div class="footerNormal">入住</div>
-            <div class="HotelName">艾登花园酒店</div>
-            <div class="footerNormal">on dd-mm-yy week</div>
->>>>>>> main
           </div>
         </div>
       </div>
       <div class="bottomGrid">
         <div class="Bottom">
           <div class="Issuer" id="bottomTxt">颁发人:</div>
-<<<<<<< HEAD
           <div class="Hotel" id="bottomTxtHotel">艾登花园酒店</div>
         </div>
         <div class="Bottom">
@@ -42,13 +33,6 @@
           <router-link to="/preferential" class="MoreImformation"
             >查看更多</router-link
           >
-=======
-          <div class="Hotel" id="bottomTxt">艾登花园酒店</div>
-        </div>
-        <div class="Bottom">
-          <div class="Number" id="bottomTxt">订单编号：xxxxxxx</div>
-          <div class="MoreImformation" id="bottomTxt">详细信息：xxxxxxx</div>
->>>>>>> main
         </div>
       </div>
       <div class="footer"></div>
@@ -57,13 +41,9 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 export default {
   props: ["userPhone", "LiveTime", "Orderno"],
 };
-=======
-export default {};
->>>>>>> main
 </script>
 
 <style scoped>
@@ -182,7 +162,6 @@ export default {};
   border-radius: 10px;
   padding: 10px;
 }
-<<<<<<< HEAD
 .MoreImformation {
   text-decoration: none;
   font-family: "SF Pro Text";
@@ -197,14 +176,5 @@ export default {};
   font-weight: 500;
   font-size: 25px;
   line-height: 130%;
-=======
-#bottomTxt {
-  font-family: "ABeeZee";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 130%;
-  color: rgba(0, 0, 0, 0.7);
->>>>>>> main
 }
 </style>
