@@ -7,6 +7,11 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: "/aboutus",
+    name: "AboutUs",
+    component: () => import("@/views/AboutUs"),
+  },
+  {
     path: "/layout",
     name: "Layout",
     component: Layout,

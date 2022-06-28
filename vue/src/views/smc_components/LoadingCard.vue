@@ -16,6 +16,9 @@ export default {
     showLoading() {
       this.$refs.loading.style.display = "block";
     },
+    shoutDown() {
+      this.$refs.loading.style.display = "none";
+    },
   },
 };
 </script>

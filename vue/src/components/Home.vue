@@ -543,6 +543,7 @@ body {
 .flex-row {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .flex-col {

@@ -1,5 +1,6 @@
 <template>
   <div class="justify-between page">
+    <div ref="Blur" id="pop" style="display: none"></div>
     <LoadingCard ref="Load" style="display: none" />
     <div class="flex-col group">
       <div class="flex-col items-start group_15 view-dL5R0iFd">
@@ -78,7 +79,9 @@
         <div class="flex-row group_9">
           <router-link to="/" class="text_13 ButtonHover">主页</router-link>
           <div class="flex-row group_10">
-            <button class="text_14 ButtonHover">关于我们</button>
+            <router-link to="/aboutus" class="text_14 ButtonHover"
+              >关于我们</router-link
+            >
             <div class="flex-row group_11">
               <button class="text_15 ButtonHover">新闻消息</button>
               <button class="text_16 ButtonHover">价格</button>
@@ -147,6 +150,8 @@ export default {
     },
     //重置
     login() {
+      this.$refs.Load.showLoading();
+      this.$refs.Blur.style.display = "block";
       this.$refs["form"].validate((valid) => {
         if (valid) {
           request.post("/customer/login", this.form).then((res) => {
@@ -154,15 +159,22 @@ export default {
               sessionStorage.setItem("customerphone", this.form.customerphone);
               console.log(this.form.customerphone);
               //sessionStorage.setItem("ms_username", ret.data.username);
-              this.$refs.Load.showLoading();
               setTimeout(() => {
                 this.$router.push("/hotel"); //登录成功后跳转页面
-              }, 2500);
+                this.$message({
+                  type: "success",
+                  message: "登陆成功",
+                });
+              }, 2000);
             } else {
-              this.$message({
-                type: "error",
-                message: res.msg,
-              });
+              setTimeout(() => {
+                this.$refs.Load.shoutDown();
+                this.$refs.Blur.style.display = "none";
+                this.$message({
+                  type: "error",
+                  message: res.msg,
+                });
+              }, 1200);
             }
           });
         }
@@ -173,6 +185,18 @@ export default {
 </script>
 
 <style scoped>
+#pop {
+  background: rgba(52, 58, 65, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 #Verification {
   display: grid;
   grid-template-columns: auto;

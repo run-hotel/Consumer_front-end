@@ -1,5 +1,6 @@
 <template>
   <div class="flex-col page">
+    <div id="pop" ref="Blur" style="display: none"></div>
     <SignUpCard ref="SignUp" style="left: 40%; top: 10%; display: none" />
     <div class="flex-col items-center section_1">
       <img
@@ -179,6 +180,7 @@ export default {
           console.log(this.form);
           request.post("/customer/register", this.form).then((res) => {
             if (res.code === "0") {
+              this.$refs.Blur.style.display = "block";
               this.$refs.SignUp.showSignUp();
               setTimeout(() => {
                 this.$router.push("/login"); //登录成功后跳转页面
@@ -197,6 +199,17 @@ export default {
 };
 </script>
 <style scoped>
+#pop {
+  background: rgba(52, 58, 65, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 html {
   font-size: 16px;
 }

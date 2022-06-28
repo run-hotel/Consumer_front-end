@@ -94,7 +94,6 @@
 
 <script>
 import request from "@/utils/request";
-import axios from "axios";
 export default {
   data() {
     return {
@@ -199,17 +198,6 @@ export default {
         }
         console.log(res);
       });
-      request
-        .get("/alipay/pay", this.OrderForm)
-        .then((response) => {
-          var form = response.data;
-          const div = document.createElement("div"); //创建div
-          div.innerHTML = form; //将返回的form 放入div
-          document.body.appendChild(div);
-        })
-        .catch(function (error) {
-          alert("失败", error);
-        });
     },
   },
 };
