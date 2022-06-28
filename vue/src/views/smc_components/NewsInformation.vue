@@ -49,8 +49,8 @@ export default {};
   background: #ffffff;
   box-shadow: 0px 6px 20px #ffe3de;
   border-radius: 30px;
-  height: 100%;
   padding-bottom: 50px;
+  height: 750px;
   width: 100%;
 }
 .topWrapper {

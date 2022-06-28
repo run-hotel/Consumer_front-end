@@ -23,13 +23,15 @@
             />
             <span class="text_2">预定酒店</span>
           </div>
-          <div class="flex-row group_6 topButton">
-            <img
-              src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395120252701.png"
-              class="image_5"
-            />
-            <span class="text text_3">新闻公告</span>
-          </div>
+          <router-link to="/news">
+            <div class="flex-row group_6 topButton">
+              <img
+                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395120252701.png"
+                class="image_5"
+              />
+              <span class="text text_3">新闻公告</span>
+            </div>
+          </router-link>
         </div>
       </div>
       <div class="flex-row group_7 RightButtons">
