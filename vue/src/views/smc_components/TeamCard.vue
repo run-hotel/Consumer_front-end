@@ -115,4 +115,8 @@ p {
 #fk2:hover {
   transform: scale(1.2);
 }
+button:hover {
+  transform: scale(1.1) translateX(10px);
+  filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+}
 </style>

@@ -3,9 +3,15 @@
     <div class="topWrapper">
       <div class="LeftText">News</div>
       <div class="RightText">
-        <div class="home regular">主页</div>
-        <div class="contact regular">联系我们</div>
-        <div class="login">登录</div>
+        <router-link to="/">
+          <div class="home regular">主页</div>
+        </router-link>
+        <router-link to="/aboutus">
+          <div class="contact regular">联系我们</div>
+        </router-link>
+        <router-link to="/login">
+          <div class="login">登录</div>
+        </router-link>
       </div>
     </div>
     <div class="ContentWrapper">
@@ -34,6 +40,7 @@ export default {};
 <style scoped>
 * {
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  text-decoration: none;
 }
 .BlurRightBack {
   background: linear-gradient(

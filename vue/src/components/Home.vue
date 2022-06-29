@@ -1,476 +1,497 @@
 <template>
-  <div class="flex-col page">
-    <div class="justify-between section_1">
-      <div class="flex-row">
-        <div class="flex-row group_1">
-          <iframe
-            src="https://embed.lottiefiles.com/animation/45893"
-            style="border: none; width: 40px; height: 40px"
-          ></iframe>
-        </div>
-        <div class="flex-row group_2 HeaderButtons">
-          <div class="flex-row group_4 topButton" @click="goUp">
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995287585802114.png"
-              class="image_2"
-            />
-            <span class="text">首页</span>
+  <div style="position: relative">
+    <div class="flex-col page">
+      <div class="justify-between section_1">
+        <div class="flex-row">
+          <div class="flex-row group_1">
+            <iframe
+              src="https://embed.lottiefiles.com/animation/45893"
+              style="border: none; width: 40px; height: 40px"
+            ></iframe>
           </div>
-          <div class="flex-row group_5 topButton" @click="bookHotel">
-            <img
-              src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995288984904893.png"
-              class="image_2"
-            />
-            <span class="text_2">预定酒店</span>
-          </div>
-          <router-link to="/news">
-            <div class="flex-row group_6 topButton">
+          <div class="flex-row group_2 HeaderButtons">
+            <div class="flex-row group_4 topButton" @click="goUp">
               <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395120252701.png"
-                class="image_5"
+                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995287585802114.png"
+                class="image_2"
               />
-              <span class="text text_3">新闻公告</span>
+              <span class="text">首页</span>
             </div>
-          </router-link>
+            <div class="flex-row group_5 topButton" @click="bookHotel">
+              <img
+                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995288984904893.png"
+                class="image_2"
+              />
+              <span class="text_2">预定酒店</span>
+            </div>
+            <router-link to="/news">
+              <div class="flex-row group_6 topButton">
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395120252701.png"
+                  class="image_5"
+                />
+                <span class="text text_3">新闻公告</span>
+              </div>
+            </router-link>
+          </div>
+        </div>
+        <div class="flex-row group_7 RightButtons">
+          <el-link
+            href="register"
+            :underline="false"
+            class="flex-col items-center text-wrapper singIn"
+          >
+            <span class="text_4">SignUp</span>
+          </el-link>
+          <el-link
+            href="login"
+            :underline="false"
+            class="flex-col items-center text-wrapper_1 logIn"
+          >
+            <span class="text_5">LogIn</span>
+          </el-link>
         </div>
       </div>
-      <div class="flex-row group_7 RightButtons">
-        <el-link
-          href="register"
-          :underline="false"
-          class="flex-col items-center text-wrapper singIn"
-        >
-          <span class="text_4">SignUp</span>
-        </el-link>
-        <el-link
-          href="login"
-          :underline="false"
-          class="flex-col items-center text-wrapper_1 logIn"
-        >
-          <span class="text_5">LogIn</span>
-        </el-link>
-      </div>
-    </div>
-    <div class="flex-col group_8">
-      <div class="flex-col" style="position: relative">
-        <div class="image_6">
-          <div class="ContentWrapper">
-            <div class="TopTip">
-              <span class="topTitle">艾迪花园酒店</span>
-              <span class="description">“艾迪无锡 · 创意无限”</span>
-              <span class="description"
-                >艾迪花园酒店是您追求完美的理想之园</span
+      <div class="flex-col group_8">
+        <div class="flex-col" style="position: relative">
+          <div class="image_6">
+            <div class="ContentWrapper">
+              <div class="TopTip">
+                <span class="topTitle">艾迪花园酒店</span>
+                <span class="description">“艾迪无锡 · 创意无限”</span>
+                <span class="description"
+                  >艾迪花园酒店是您追求完美的理想之园</span
+                >
+                <span class="description">“因为爱，所以来”</span>
+              </div>
+              <PurchaseButton :bookHotel="bookHotel" />
+            </div>
+          </div>
+          <div class="flex-col section_3" ref="showHome">
+            <div class="flex-col items-center group_10">
+              <span class="text_6 text_7">农家品质起航</span>
+              <span class="text_6 text_8" style="position: relative"
+                >企业文化<iframe
+                  src="https://embed.lottiefiles.com/animation/1370"
+                  style="
+                    position: absolute;
+                    border: none;
+                    left: 10px;
+                    top: -50px;
+                  "
+                ></iframe>
+              </span>
+            </div>
+            <div class="flex-col group_11">
+              <div class="justify-between group_12">
+                <div class="flex-col items-center">
+                  <span class="text_9">客户</span>
+                  <span class="text_10">至上</span>
+                </div>
+                <div class="flex-col items-center">
+                  <span class="text_11">以人</span>
+                  <span class="text_12">为本</span>
+                </div>
+                <div class="flex-col items-center">
+                  <span class="text_13">诚信</span>
+                  <span class="text_14">正直</span>
+                </div>
+              </div>
+              <div class="flex-row group_16">
+                <span class="text_15">
+                  客户是我们的”衣食父母”，万鸿不断坚持以客户为中心的理念，可以凝聚企业每位员士的不懈激情与智慧，不断通过创新优化产晶、系统性的解决方案及良好的服务来为客户创造价值与增值，让万鸿在与客户
+                  的共同成长中实现可持续发展。强化服务意识，给客户提供完美周到
+                  的服务是企业竞争力的重要表现
+                </span>
+                <span class="text_16">
+                  人是最有灵性的生物，是这个世界上感情最为丰富的主宰者。万鸿坚信员工永远是最宝贵的财富和资本，因此在管理过程中坚持以人为管理工作的出发点和中心，围绕着激发和
+                  调动人的积极性、主动性和创造性开展工作。公司为员工提供良好的学习、交流平台和阶梯式的晋升通道，提高员工的技术与服务水平，帮助员工成长，改善员工生活；同时我们鼓励同事与同事之间、上下级之间、部门与部
+                  门之间多沟通，快乐地工作，以促进工作更好
+                </span>
+                <span class="text_17">
+                  诚信是立人之本，孔子曰：人而无信，不知真可也。我们需要坚守：1、不赚不该赚的钱，不拿不该拿的东西，远离高压线；2、坚守契约精神、公道平等、不偏袒；3、不传播未经证实的消息，不背后议论人和事；
+                  4、敢于通过正确的渠道和路程，准确表达自己的观点；表达批评意见的同时能提出相应的建议；
+                  5、对损害公司利益的行为正确有效的制止。
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="flex-col section_4">
+            <span class="text_6 text_18">主要介绍</span>
+            <span class="text_6 text_19" style="position: relative"
+              >艾迪花园酒店带您开启品质生活<iframe
+                src="https://embed.lottiefiles.com/animation/71540"
+                style="position: absolute"
+              ></iframe
+            ></span>
+            <span class="text_6 text_20">Be Love Be here</span>
+            <div class="flex-col group_17">
+              <div class="justify-between group_18">
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395092545127.png"
+                  class="image_7"
+                />
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395098398951.png"
+                  class="image_7"
+                />
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395097508068.png"
+                  class="image_7 image_10"
+                />
+              </div>
+              <div class="flex-col group_19">
+                <div class="justify-between group_20">
+                  <span class="text_6 text_21">名师设计</span>
+                  <span class="text_6 text_22">位置优越</span>
+                  <span class="text_6 text_23">性价比高</span>
+                </div>
+                <div class="justify-between group_21">
+                  <span class="text_6 text_24">独创性设计，设计巨腕领衔</span>
+                  <span class="text_6 text_25">位置优越交通便利</span>
+                  <span class="text_6 text_26">房间干净 服务热情 态度亲切</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex-col group_22">
+              <div class="justify-between group_23">
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395105473436.png"
+                  class="image_7"
+                />
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395108138911.png"
+                  class="image_7"
+                />
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395106170693.png"
+                  class="image_7 image_13"
+                />
+              </div>
+              <div class="flex-col group_24">
+                <div class="justify-between group_25">
+                  <div class="flex-col items-center text-wrapper_2">
+                    <span class="text_6 text_27">酒店设施</span>
+                  </div>
+                  <div class="flex-col items-center text-wrapper_2">
+                    <span class="text_6 text_28">精选环境</span>
+                  </div>
+                  <div class="flex-col text-wrapper_3">
+                    <span class="text_6 text_29">实地欣赏</span>
+                  </div>
+                </div>
+                <div class="flex-row group_26">
+                  <span class="text_6 text_30">功能设施齐全</span>
+                  <span class="text_6 text_31">依山傍水，让您亲近大自然</span>
+                  <span class="text_6 text_32">无需实地考察即可在线欣赏</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-col section_5">
+            <div class="flex-col items-center text-wrapper_4">
+              <span class="text_33">酒店设施 </span>
+            </div>
+          </div>
+        </div>
+        <div class="flex-col group_27">
+          <div class="flex-col group_28">
+            <div class="justify-between group_29">
+              <div class="flex-col items-center group_30">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995334694849912.png"
+                  class="image_14 border"
+                />
+                <span class="text_34">游泳池</span>
+              </div>
+              <div
+                class="flex-col items-center group_31"
+                style="position: relative"
               >
-              <span class="description">“因为爱，所以来”</span>
-            </div>
-            <PurchaseButton :bookHotel="bookHotel" />
-          </div>
-        </div>
-        <div class="flex-col section_3" ref="showHome">
-          <div class="flex-col items-center group_10">
-            <span class="text_6 text_7">农家品质起航</span>
-            <span class="text_6 text_8" style="position: relative"
-              >企业文化<iframe
-                src="https://embed.lottiefiles.com/animation/1370"
-                style="position: absolute; border: none; left: 10px; top: -50px"
-              ></iframe>
-            </span>
-          </div>
-          <div class="flex-col group_11">
-            <div class="justify-between group_12">
-              <div class="flex-col items-center">
-                <span class="text_9">客户</span>
-                <span class="text_10">至上</span>
-              </div>
-              <div class="flex-col items-center">
-                <span class="text_11">以人</span>
-                <span class="text_12">为本</span>
-              </div>
-              <div class="flex-col items-center">
-                <span class="text_13">诚信</span>
-                <span class="text_14">正直</span>
-              </div>
-            </div>
-            <div class="flex-row group_16">
-              <span class="text_15">
-                客户是我们的”衣食父母”，万鸿不断坚持以客户为中心的理念，可以凝聚企业每位员士的不懈激情与智慧，不断通过创新优化产晶、系统性的解决方案及良好的服务来为客户创造价值与增值，让万鸿在与客户
-                的共同成长中实现可持续发展。强化服务意识，给客户提供完美周到
-                的服务是企业竞争力的重要表现
-              </span>
-              <span class="text_16">
-                人是最有灵性的生物，是这个世界上感情最为丰富的主宰者。万鸿坚信员工永远是最宝贵的财富和资本，因此在管理过程中坚持以人为管理工作的出发点和中心，围绕着激发和
-                调动人的积极性、主动性和创造性开展工作。公司为员工提供良好的学习、交流平台和阶梯式的晋升通道，提高员工的技术与服务水平，帮助员工成长，改善员工生活；同时我们鼓励同事与同事之间、上下级之间、部门与部
-                门之间多沟通，快乐地工作，以促进工作更好
-              </span>
-              <span class="text_17">
-                诚信是立人之本，孔子曰：人而无信，不知真可也。我们需要坚守：1、不赚不该赚的钱，不拿不该拿的东西，远离高压线；2、坚守契约精神、公道平等、不偏袒；3、不传播未经证实的消息，不背后议论人和事；
-                4、敢于通过正确的渠道和路程，准确表达自己的观点；表达批评意见的同时能提出相应的建议；
-                5、对损害公司利益的行为正确有效的制止。
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="flex-col section_4">
-          <span class="text_6 text_18">主要介绍</span>
-          <span class="text_6 text_19" style="position: relative"
-            >艾迪花园酒店带您开启品质生活<iframe
-              src="https://embed.lottiefiles.com/animation/71540"
-              style="position: absolute"
-            ></iframe
-          ></span>
-          <span class="text_6 text_20">Be Love Be here</span>
-          <div class="flex-col group_17">
-            <div class="justify-between group_18">
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395092545127.png"
-                class="image_7"
-              />
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395098398951.png"
-                class="image_7"
-              />
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395097508068.png"
-                class="image_7 image_10"
-              />
-            </div>
-            <div class="flex-col group_19">
-              <div class="justify-between group_20">
-                <span class="text_6 text_21">名师设计</span>
-                <span class="text_6 text_22">位置优越</span>
-                <span class="text_6 text_23">性价比高</span>
-              </div>
-              <div class="justify-between group_21">
-                <span class="text_6 text_24">独创性设计，设计巨腕领衔</span>
-                <span class="text_6 text_25">位置优越交通便利</span>
-                <span class="text_6 text_26">房间干净 服务热情 态度亲切</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex-col group_22">
-            <div class="justify-between group_23">
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395105473436.png"
-                class="image_7"
-              />
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395108138911.png"
-                class="image_7"
-              />
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395106170693.png"
-                class="image_7 image_13"
-              />
-            </div>
-            <div class="flex-col group_24">
-              <div class="justify-between group_25">
-                <div class="flex-col items-center text-wrapper_2">
-                  <span class="text_6 text_27">酒店设施</span>
-                </div>
-                <div class="flex-col items-center text-wrapper_2">
-                  <span class="text_6 text_28">精选环境</span>
-                </div>
-                <div class="flex-col text-wrapper_3">
-                  <span class="text_6 text_29">实地欣赏</span>
-                </div>
-              </div>
-              <div class="flex-row group_26">
-                <span class="text_6 text_30">功能设施齐全</span>
-                <span class="text_6 text_31">依山傍水，让您亲近大自然</span>
-                <span class="text_6 text_32">无需实地考察即可在线欣赏</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex-col section_5">
-          <div class="flex-col items-center text-wrapper_4">
-            <span class="text_33">酒店设施 </span>
-          </div>
-        </div>
-      </div>
-      <div class="flex-col group_27">
-        <div class="flex-col group_28">
-          <div class="justify-between group_29">
-            <div class="flex-col items-center group_30">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995334694849912.png"
-                class="image_14 border"
-              />
-              <span class="text_34">游泳池</span>
-            </div>
-            <div
-              class="flex-col items-center group_31"
-              style="position: relative"
-            >
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995333350901149.png"
-                class="image_15 border"
-              />
-              <span class="text_35">健身房</span>
-              <iframe
-                src="https://embed.lottiefiles.com/animation/53617"
-                style="
-                  position: absolute;
-                  left: 350px;
-                  top: -100px;
-                  width: 250px;
-                  height: 250px;
-                "
-              ></iframe>
-            </div>
-          </div>
-          <div class="flex-col group_32">
-            <div class="justify-between">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995336700625801.png"
-                class="image_16 border"
-              />
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337869436015.png"
-                class="image_16 border"
-              />
-            </div>
-            <div class="justify-between group_34">
-              <span class="text_36">休息室</span>
-              <span class="text_37">Spa</span>
-            </div>
-          </div>
-          <div class="justify-between group_35" id="text">
-            <div class="flex-col items-center group_36">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995334021496401.png"
-                class="image_16 border"
-              />
-              <span class="text_38">会议室</span>
-            </div>
-            <div class="flex-col items-center">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995335872070974.png"
-                class="image_16 border"
-              />
-              <span class="text_39">停车场</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex-col section_6">
-          <div class="flex-col items-center text-wrapper_5">
-            <span class="text_40" ref="bookHotel">房间预订</span>
-          </div>
-        </div>
-      </div>
-      <div class="flex-col group_38">
-        <div class="flex-col group_39">
-          <div class="flex-col group_40">
-            <div class="flex-row">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995355904306218.png"
-                class="image_21 border"
-              />
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995286399720890.png"
-                class="image_23 image_24 border"
-              />
-            </div>
-            <div class="justify-between group_42">
-              <span class="text_41">大床房</span>
-              <span class="text_42">双人床</span>
-            </div>
-          </div>
-          <div class="justify-between group_43">
-            <div class="flex-row">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995356082408751.png"
-                class="image_25 image_26"
-              />
-              <span class="text_43">1 bathroom</span>
-            </div>
-            <div class="flex-row">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339752947702.png"
-                class="image_25 image_27"
-              />
-              <span class="text_44">1 bathroom</span>
-            </div>
-          </div>
-          <div class="justify-between group_46">
-            <div class="flex-row">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995344206858365.png"
-                class="image_25 image_28"
-              />
-              <span class="text_45">1 bed</span>
-            </div>
-            <div class="flex-row">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339752947702.png"
-                class="image_25 image_29"
-              />
-              <span class="text_46">2 beds</span>
-            </div>
-          </div>
-          <div class="justify-between group_49">
-            <div class="flex-row">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995344206858365.png"
-                class="image_25 image_30"
-              />
-              <span class="text_47">1～2 people</span>
-            </div>
-            <div class="flex-row">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339752947702.png"
-                class="image_25 image_31"
-              />
-              <span class="text_48">2 people</span>
-            </div>
-          </div>
-          <div class="flex-row group_52">
-            <span class="text_49">200/每晚</span>
-            <div class="flex-row group_53">
-              <BookButton />
-              <span class="text_52">309/每晚</span>
-            </div>
-            <BookButton style="margin-left: 333px" />
-          </div>
-          <div class="flex-col group_54">
-            <div class="items-start">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995285195616200.png"
-                class="image_21"
-              />
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995283984664540.png"
-                class="image_23 image_33"
-              />
-            </div>
-            <div class="justify-between group_56">
-              <span class="text_54">豪华床</span>
-              <span class="text_55">单人床</span>
-            </div>
-          </div>
-          <div class="flex-col group_57">
-            <div class="topButton">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339527578233.png"
-                class="image_25"
-              />
-              <span class="text_56">2 bathroom</span>
-            </div>
-            <div class="justify-end">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337958992441.png"
-                class="image_25 image_35"
-              />
-              <span class="text_57">1 bathroom</span>
-            </div>
-          </div>
-          <div class="flex-col group_60">
-            <div class="topButton">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339527578233.png"
-                class="image_25"
-              />
-              <span class="text_58">3 beds</span>
-            </div>
-            <div class="justify-end">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337958992441.png"
-                class="image_25 image_37"
-              />
-              <span class="text_59">2 beds</span>
-            </div>
-          </div>
-          <div class="flex-col group_63">
-            <div class="topButton">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339527578233.png"
-                class="image_25"
-              />
-              <span class="text_60">3 people</span>
-            </div>
-            <div class="justify-end group_65">
-              <img
-                src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337958992441.png"
-                class="image_25 image_39"
-              />
-              <span class="text_61">2 people</span>
-            </div>
-          </div>
-          <div class="justify-between group_66">
-            <span class="text_62">600/每晚</span>
-            <div class="flex-row group_67">
-              <BookButton />
-              <span class="text_64">120/每晚</span>
-            </div>
-            <BookButton style="margin-top: 4px" />
-          </div>
-        </div>
-        <div class="justify-between section_7">
-          <div class="flex-col items-start group_68">
-            <span class="text_6 text_66">Frequent ask qustions</span>
-            <span class="text_6 text_67"
-              >如果遇到什么问题，请及时与我们取得联系！</span
-            >
-          </div>
-          <div class="flex-col buttonRightCards">
-            <div class="flex-row section_8">
-              <el-link href="/preferential" :underline="false">
-                <span class="text_6 text_68 text_69">优惠政策</span>
                 <img
-                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
-                  class="image_2 image_40"
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995333350901149.png"
+                  class="image_15 border"
                 />
-              </el-link>
+                <span class="text_35">健身房</span>
+                <iframe
+                  src="https://embed.lottiefiles.com/animation/53617"
+                  style="
+                    position: absolute;
+                    left: 350px;
+                    top: -100px;
+                    width: 250px;
+                    height: 250px;
+                  "
+                ></iframe>
+              </div>
             </div>
-            <div class="flex-row section_8">
-              <el-link href="/preordain" :underline="false">
-                <span class="text_6 text_68 text_70">预订流程</span>
+            <div class="flex-col group_32">
+              <div class="justify-between">
                 <img
-                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
-                  class="image_2 image_40"
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995336700625801.png"
+                  class="image_16 border"
                 />
-              </el-link>
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337869436015.png"
+                  class="image_16 border"
+                />
+              </div>
+              <div class="justify-between group_34">
+                <span class="text_36">休息室</span>
+                <span class="text_37">Spa</span>
+              </div>
             </div>
-            <div class="flex-row section_9">
-              <el-link :underline="false" href="privacy">
-                <span class="text_6 text_71">隐私条款</span>
+            <div class="justify-between group_35" id="text">
+              <div class="flex-col items-center group_36">
                 <img
-                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
-                  class="image_2 image_43"
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995334021496401.png"
+                  class="image_16 border"
                 />
-              </el-link>
+                <span class="text_38">会议室</span>
+              </div>
+              <div class="flex-col items-center">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995335872070974.png"
+                  class="image_16 border"
+                />
+                <span class="text_39">停车场</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex-col section_6">
+            <div class="flex-col items-center text-wrapper_5">
+              <span class="text_40" ref="bookHotel">房间预订</span>
             </div>
           </div>
         </div>
-        <div class="flex-col items-center section_10">
-          <div class="flex-row group_70">
-            <div class="flex-row Words">
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395117661557.png"
-                class="image_44"
-              />
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395118612442.png"
-                class="image_45"
-              />
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395111799174.png"
-                class="image_46"
-              />
-              <img
-                src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395113689302.png"
-                class="image_47"
-              />
+        <div class="flex-col group_38">
+          <div class="flex-col group_39">
+            <div class="flex-col group_40">
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995355904306218.png"
+                  class="image_21 border"
+                />
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995286399720890.png"
+                  class="image_23 image_24 border"
+                />
+              </div>
+              <div class="justify-between group_42">
+                <span class="text_41">大床房</span>
+                <span class="text_42">双人床</span>
+              </div>
             </div>
-            <div class="flex-row group_72">
-              <span class="text_72" @click="goUp">首页</span>
-              <span class="text_73" @click="bookHotel">预定酒店 </span>
-              <span class="text_74">新闻公告</span>
+            <div class="justify-between group_43">
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995356082408751.png"
+                  class="image_25 image_26"
+                />
+                <span class="text_43">1 bathroom</span>
+              </div>
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339752947702.png"
+                  class="image_25 image_27"
+                />
+                <span class="text_44">1 bathroom</span>
+              </div>
+            </div>
+            <div class="justify-between group_46">
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995344206858365.png"
+                  class="image_25 image_28"
+                />
+                <span class="text_45">1 bed</span>
+              </div>
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339752947702.png"
+                  class="image_25 image_29"
+                />
+                <span class="text_46">2 beds</span>
+              </div>
+            </div>
+            <div class="justify-between group_49">
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995344206858365.png"
+                  class="image_25 image_30"
+                />
+                <span class="text_47">1～2 people</span>
+              </div>
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339752947702.png"
+                  class="image_25 image_31"
+                />
+                <span class="text_48">2 people</span>
+              </div>
+            </div>
+            <div class="flex-row group_52">
+              <span class="text_49">200/每晚</span>
+              <div class="flex-row group_53">
+                <BookButton />
+                <span class="text_52">309/每晚</span>
+              </div>
+              <BookButton style="margin-left: 333px" />
+            </div>
+            <div class="flex-col group_54">
+              <div class="items-start">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995285195616200.png"
+                  class="image_21"
+                />
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995283984664540.png"
+                  class="image_23 image_33"
+                />
+              </div>
+              <div class="justify-between group_56">
+                <span class="text_54">豪华床</span>
+                <span class="text_55">单人床</span>
+              </div>
+            </div>
+            <div class="flex-col group_57">
+              <div class="topButton">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339527578233.png"
+                  class="image_25"
+                />
+                <span class="text_56">2 bathroom</span>
+              </div>
+              <div class="justify-end">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337958992441.png"
+                  class="image_25 image_35"
+                />
+                <span class="text_57">1 bathroom</span>
+              </div>
+            </div>
+            <div class="flex-col group_60">
+              <div class="topButton">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339527578233.png"
+                  class="image_25"
+                />
+                <span class="text_58">3 beds</span>
+              </div>
+              <div class="justify-end">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337958992441.png"
+                  class="image_25 image_37"
+                />
+                <span class="text_59">2 beds</span>
+              </div>
+            </div>
+            <div class="flex-col group_63">
+              <div class="topButton">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339527578233.png"
+                  class="image_25"
+                />
+                <span class="text_60">3 people</span>
+              </div>
+              <div class="justify-end group_65">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337958992441.png"
+                  class="image_25 image_39"
+                />
+                <span class="text_61">2 people</span>
+              </div>
+            </div>
+            <div class="justify-between group_66">
+              <span class="text_62">600/每晚</span>
+              <div class="flex-row group_67">
+                <BookButton />
+                <span class="text_64">120/每晚</span>
+              </div>
+              <BookButton style="margin-top: 4px" />
+            </div>
+          </div>
+          <div class="justify-between section_7">
+            <div class="flex-col items-start group_68">
+              <span class="text_6 text_66">Frequent ask qustions</span>
+              <span class="text_6 text_67"
+                >如果遇到什么问题，请及时与我们取得联系！</span
+              >
+            </div>
+            <div class="flex-col buttonRightCards">
+              <div class="flex-row section_8">
+                <el-link href="/preferential" :underline="false">
+                  <span class="text_6 text_68 text_69">优惠政策</span>
+                  <img
+                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
+                    class="image_2 image_40"
+                  />
+                </el-link>
+              </div>
+              <div class="flex-row section_8">
+                <el-link href="/preordain" :underline="false">
+                  <span class="text_6 text_68 text_70">预订流程</span>
+                  <img
+                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
+                    class="image_2 image_40"
+                  />
+                </el-link>
+              </div>
+              <div class="flex-row section_9">
+                <el-link :underline="false" href="privacy">
+                  <span class="text_6 text_71">隐私条款</span>
+                  <img
+                    src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995291562283425.png"
+                    class="image_2 image_43"
+                  />
+                </el-link>
+              </div>
+            </div>
+          </div>
+          <div class="flex-col items-center section_10">
+            <div class="flex-row group_70">
+              <div class="flex-row Words">
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395117661557.png"
+                  class="image_44"
+                />
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395118612442.png"
+                  class="image_45"
+                />
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395111799174.png"
+                  class="image_46"
+                />
+                <img
+                  src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995395113689302.png"
+                  class="image_47"
+                />
+              </div>
+              <div class="flex-row group_72">
+                <span class="text_72" @click="goUp">首页</span>
+                <span class="text_73" @click="bookHotel">预定酒店 </span>
+                <el-link :underline="false" href="/news">
+                  <span class="text_74">新闻公告</span>
+                </el-link>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <img
+      style="
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        width: 100px;
+        height: 100px;
+      "
+      src="@/img/erweima.jpg"
+      alt="erweima"
+    />
   </div>
 </template>
 

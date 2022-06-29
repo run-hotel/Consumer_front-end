@@ -28,13 +28,15 @@
           />
           <span class="text text_2">预定酒店</span>
         </router-link>
-        <div class="flex-row group_2 bottom">
-          <img
-            src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266504e5a7e3f03106ffb8e/6274b8cb3051170011fb085d/16527133342684748614.png"
-            class="image_4"
-          />
-          <span class="text text_4">新闻公告</span>
-        </div>
+        <router-link to="/news">
+          <div class="flex-row group_2 bottom">
+            <img
+              src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/6266504e5a7e3f03106ffb8e/6274b8cb3051170011fb085d/16527133342684748614.png"
+              class="image_4"
+            />
+            <span class="text text_4">新闻公告</span>
+          </div>
+        </router-link>
         <div class="flex-row group_11 bottom">
           <img
             src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266504e5a7e3f03106ffb8e/6274b8cb3051170011fb085d/16525173524698910076.png"

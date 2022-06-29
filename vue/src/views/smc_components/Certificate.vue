@@ -57,7 +57,7 @@ export default {
           this.tableData = res.data;
           this.total = res.data.length;
           res.data.forEach((element, index) => {
-            if (element.orderstatus == "0") this.LiveNumber = index;
+            if (element.orderstatus == "2") this.LiveNumber = index;
           });
         });
     },

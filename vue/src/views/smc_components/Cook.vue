@@ -25,11 +25,10 @@ export default {
   },
   methods: {
     goRight() {
-      console.log("我往右走了");
-      this.$refs.TopWrapper.style.marginLeft = "200px";
+      this.$refs.TopWrapper.style.width = "100%";
     },
     goBack() {
-      this.$refs.TopWrapper.style.marginLeft = "0";
+      this.$refs.TopWrapper.style.width = "1200px";
     },
   },
   data() {
@@ -73,10 +72,11 @@ export default {
 
 <style scoped>
 * {
-  transition: 2s ease;
+  transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .WrapperTop {
-  width: 1500px;
+  width: 1200px;
+  max-width: 1500px;
   background: #ffffff;
   border-radius: 100px;
   margin-top: 10%;

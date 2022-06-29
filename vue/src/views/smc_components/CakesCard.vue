@@ -1,6 +1,6 @@
 <template>
   <div class="WrapperTop2">
-    <img :src="src" alt="MM" />
+    <img :src="src" :alt="src" />
     <div class="rightWrapper">
       <div class="Name">{{ name }}</div>
       <div class="Description">{{ description }}</div>

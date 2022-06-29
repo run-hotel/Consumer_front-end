@@ -60,7 +60,7 @@ export default {
           this.tableData = res.data;
           this.total = res.data.length;
           this.tableData.forEach((element) => {
-            if (element.orderstatus == "0") this.showCard = true;
+            if (element.orderstatus == "2") this.showCard = true;
           });
         });
     },

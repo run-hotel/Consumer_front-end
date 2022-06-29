@@ -163,4 +163,8 @@ export default {
 .right:hover {
   transform: scale(1.2);
 }
+.ButtonWrapper:hover {
+  transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(1.1) rotate(-2deg);
+}
 </style>

@@ -83,7 +83,9 @@
               >关于我们</router-link
             >
             <div class="flex-row group_11">
-              <button class="text_15 ButtonHover">新闻消息</button>
+              <router-link to="/news" class="text_15 ButtonHover"
+                >新闻消息</router-link
+              >
               <button class="text_16 ButtonHover">价格</button>
             </div>
           </div>

@@ -3,7 +3,7 @@
     <div id="HeadeText">更多内容，敬请期待</div>
     <div id="NotYet">实际上还没做好</div>
     <div class="ButtonWrapper01">
-      <button class="BUtton">
+      <button class="BUtton" @click="prev">
         <span class="back"> 点击返回</span>
       </button>
       <img src="@/img/hand.svg" />
@@ -12,7 +12,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    prev() {
+      this.$router.back();
+    },
+  },
+};
 </script>
 <style scoped>
 * {
@@ -70,7 +76,7 @@ export default {};
 }
 img {
   position: absolute;
-  left: 35%;
+  left: 30%;
 }
 .BUtton:hover {
   transform: scale(1.1);
