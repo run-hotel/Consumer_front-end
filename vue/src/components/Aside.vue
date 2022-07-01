@@ -18,6 +18,12 @@
           >房间详情</el-menu-item
         >
       </el-submenu>
+      <el-submenu index="3">
+        <span slot="title">用房评价</span>
+        <el-menu-item index="user" @click.native="$router.push('/evaluation')"
+          >评价</el-menu-item
+        >
+      </el-submenu>
     </el-menu>
   </div>
 </template>

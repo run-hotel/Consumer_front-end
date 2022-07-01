@@ -12,6 +12,11 @@ const routes = [
     component: () => import("@/views/AboutUs"),
   },
   {
+    path: "/bookroom",
+    name: "/BookRoom",
+    component: () => import("@/views/smc_components/BookRoom"),
+  },
+  {
     path: "/news",
     name: "/News",
     component: () => import("@/views/News"),
@@ -25,6 +30,11 @@ const routes = [
         path: "/hotel",
         name: "Hotel",
         component: () => import("@/views/Hotel"),
+      },
+      {
+        path: "/evaluation",
+        name: "Evaluation",
+        component: () => import("@/views/smc_components/Evaluation"),
       },
       {
         path: "/detail",

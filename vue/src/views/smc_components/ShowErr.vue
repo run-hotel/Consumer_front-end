@@ -9,12 +9,36 @@
 
 <script>
 export default {
+  props: ["roomType", "description", "images"],
+  created() {
+    if (sessionStorage.getItem("customerphone") !== null) {
+      this.isLogin = true;
+    }
+  },
+  data() {
+    return {
+      isLogin: false,
+    };
+  },
   methods: {
     ShowError() {
-      this.$refs.error.style.display = "grid";
-      setTimeout(() => {
-        this.$router.push("/login");
-      }, 1500);
+      if (!this.isLogin) {
+        this.$refs.error.style.display = "grid";
+        setTimeout(() => {
+          this.$router.push("/login");
+        }, 1500);
+      } else {
+        // alert(this.roomType.roomType);
+        this.$router.push({
+          path: "/bookroom",
+          query: {
+            roomType: this.roomType.roomType,
+            price: this.roomType.price,
+            description: this.description,
+            images: this.images,
+          },
+        });
+      }
     },
   },
 };

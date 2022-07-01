@@ -7,7 +7,8 @@
       display: flex;
     "
   >
-    <div
+    <el-link
+      href="/"
       style="
         width: 200px;
         padding-left: 30px;
@@ -15,8 +16,8 @@
         color: dodgerblue;
       "
     >
-      一家酒店
-    </div>
+      艾登花园酒店
+    </el-link>
     <div style="flex: 1"></div>
     <div style="flex: 0.05"></div>
     <div>

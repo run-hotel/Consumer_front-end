@@ -40,16 +40,31 @@
             href="register"
             :underline="false"
             class="flex-col items-center text-wrapper singIn"
+            v-if="!isLogin"
           >
             <span class="text_4">SignUp</span>
+          </el-link>
+          <el-link class="userInfo" :underline="false" v-else href="/hotel">
+            <img
+              style="transform: scale(1.2)"
+              src="@/img/userLogin.svg"
+              alt="userlogin"
+            />
           </el-link>
           <el-link
             href="login"
             :underline="false"
             class="flex-col items-center text-wrapper_1 logIn"
+            v-if="!isLogin"
           >
             <span class="text_5">LogIn</span>
           </el-link>
+          <div v-else class="logout" @click="logOut">
+            <div class="OutWrapper">
+              <img src="@/img/logOut.svg" alt="logout" />
+              <div class="logOutText">退出系统</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="flex-col group_8">
@@ -267,19 +282,27 @@
         <div class="flex-col group_38">
           <div class="flex-col group_39">
             <div class="flex-col group_40">
-              <div class="flex-row">
-                <img
-                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995355904306218.png"
-                  class="image_21 border"
-                />
-                <img
-                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995286399720890.png"
-                  class="image_23 image_24 border"
-                />
+              <div class="centerGroup">
+                <viewer class="viewer">
+                  <img
+                    v-for="(img, index) in president"
+                    :key="index"
+                    :src="img"
+                    class="image_21 border"
+                  />
+                </viewer>
+                <viewer class="viewer">
+                  <img
+                    v-for="(img, index) in webroom"
+                    :key="index"
+                    :src="img"
+                    class="image_21 border"
+                  />
+                </viewer>
               </div>
               <div class="justify-between group_42">
-                <span class="text_41">大床房</span>
-                <span class="text_42">双人床</span>
+                <span class="text_41">{{ RoomTypeData[2].roomType }}</span>
+                <span class="text_42">{{ RoomTypeData[7].roomType }}</span>
               </div>
             </div>
             <div class="justify-between group_43">
@@ -331,27 +354,44 @@
               </div>
             </div>
             <div class="flex-row group_52">
-              <span class="text_49">200/每晚</span>
+              <span class="text_49">{{ RoomTypeData[2].price }}/每晚</span>
               <div class="flex-row group_53">
-                <BookButton />
-                <span class="text_52">309/每晚</span>
+                <BookButton
+                  :room="RoomTypeData[2]"
+                  :description="roomDescription.president"
+                  :images="president"
+                />
+                <span class="text_52">{{ RoomTypeData[7].price }}/每晚</span>
               </div>
-              <BookButton style="margin-left: 333px" />
+              <BookButton
+                :description="roomDescription.webroom"
+                :room="RoomTypeData[7]"
+                style="margin-left: 333px"
+                :images="webroom"
+              />
             </div>
             <div class="flex-col group_54">
               <div class="items-start">
-                <img
-                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995285195616200.png"
-                  class="image_21"
-                />
-                <img
-                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995283984664540.png"
-                  class="image_23 image_33"
-                />
+                <viewer class="viewer">
+                  <img
+                    v-for="(img, index) in bisnessroom"
+                    :key="index"
+                    :src="img"
+                    class="image_21 border"
+                  />
+                </viewer>
+                <viewer class="viewer">
+                  <img
+                    v-for="(img, index) in copleroom"
+                    :key="index"
+                    :src="img"
+                    class="image_21 border"
+                  />
+                </viewer>
               </div>
               <div class="justify-between group_56">
-                <span class="text_54">豪华床</span>
-                <span class="text_55">单人床</span>
+                <span class="text_54">{{ RoomTypeData[5].roomType }}</span>
+                <span class="text_55">{{ RoomTypeData[4].roomType }}</span>
               </div>
             </div>
             <div class="flex-col group_57">
@@ -403,16 +443,205 @@
               </div>
             </div>
             <div class="justify-between group_66">
-              <span class="text_62">600/每晚</span>
+              <span class="text_62">{{ RoomTypeData[5].price }}/每晚</span>
               <div class="flex-row group_67">
-                <BookButton />
-                <span class="text_64">120/每晚</span>
+                <BookButton
+                  :description="roomDescription.bisnessroom"
+                  :room="RoomTypeData[5]"
+                  :images="bisnessroom"
+                />
+                <span class="text_64">{{ RoomTypeData[4].price }}/每晚</span>
               </div>
-              <BookButton style="margin-top: 4px" />
+              <BookButton
+                :description="roomDescription.copleroom"
+                :room="RoomTypeData[4]"
+                style="margin-top: 4px"
+                :images="copleroom"
+              />
+            </div>
+          </div>
+          <div class="flex-col group_39">
+            <div class="flex-col group_40">
+              <div class="centerGroup">
+                <viewer class="viewer">
+                  <img
+                    v-for="(img, index) in hugeroom"
+                    :key="index"
+                    :src="img"
+                    class="image_21 border"
+                  />
+                </viewer>
+                <viewer class="viewer">
+                  <img
+                    v-for="(img, index) in doubleroom"
+                    :key="index"
+                    :src="img"
+                    class="image_21 border"
+                  />
+                </viewer>
+              </div>
+              <div class="justify-between group_42">
+                <span class="text_41">{{ RoomTypeData[1].roomType }}</span>
+                <span class="text_42">{{ RoomTypeData[3].roomType }}</span>
+              </div>
+            </div>
+            <div class="justify-between group_43">
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995356082408751.png"
+                  class="image_25 image_26"
+                />
+                <span class="text_43">1 bathroom</span>
+              </div>
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339752947702.png"
+                  class="image_25 image_27"
+                />
+                <span class="text_44">1 bathroom</span>
+              </div>
+            </div>
+            <div class="justify-between group_46">
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995344206858365.png"
+                  class="image_25 image_28"
+                />
+                <span class="text_45">1 bed</span>
+              </div>
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339752947702.png"
+                  class="image_25 image_29"
+                />
+                <span class="text_46">2 beds</span>
+              </div>
+            </div>
+            <div class="justify-between group_49">
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995344206858365.png"
+                  class="image_25 image_30"
+                />
+                <span class="text_47">1～2 people</span>
+              </div>
+              <div class="flex-row">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339752947702.png"
+                  class="image_25 image_31"
+                />
+                <span class="text_48">2 people</span>
+              </div>
+            </div>
+            <div class="flex-row group_52">
+              <span class="text_49">{{ RoomTypeData[1].price }}/每晚</span>
+              <div class="flex-row group_53">
+                <BookButton
+                  :description="roomDescription.hugeroom"
+                  :room="RoomTypeData[1]"
+                  :images="hugeroom"
+                />
+                <span class="text_52">{{ RoomTypeData[3].price }}/每晚</span>
+              </div>
+              <BookButton
+                :description="roomDescription.doubleroom"
+                :room="RoomTypeData[3]"
+                style="margin-left: 333px"
+                :images="doubleroom"
+              />
+            </div>
+            <div class="flex-col group_54">
+              <div class="items-start">
+                <viewer class="viewer">
+                  <img
+                    v-for="(img, index) in bigroom"
+                    :key="index"
+                    :src="img"
+                    class="image_21 border"
+                  />
+                </viewer>
+                <viewer class="viewer">
+                  <img
+                    v-for="(img, index) in singleroom"
+                    :key="index"
+                    :src="img"
+                    class="image_21 border"
+                  />
+                </viewer>
+              </div>
+              <div class="justify-between group_56">
+                <span class="text_54">{{ RoomTypeData[6].roomType }}</span>
+                <span class="text_55">{{ RoomTypeData[0].roomType }}</span>
+              </div>
+            </div>
+            <div class="flex-col group_57">
+              <div class="topButton">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339527578233.png"
+                  class="image_25"
+                />
+                <span class="text_56">2 bathroom</span>
+              </div>
+              <div class="justify-end">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337958992441.png"
+                  class="image_25 image_35"
+                />
+                <span class="text_57">1 bathroom</span>
+              </div>
+            </div>
+            <div class="flex-col group_60">
+              <div class="topButton">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339527578233.png"
+                  class="image_25"
+                />
+                <span class="text_58">3 beds</span>
+              </div>
+              <div class="justify-end">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337958992441.png"
+                  class="image_25 image_37"
+                />
+                <span class="text_59">2 beds</span>
+              </div>
+            </div>
+            <div class="flex-col group_63">
+              <div class="topButton">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995339527578233.png"
+                  class="image_25"
+                />
+                <span class="text_60">3 people</span>
+              </div>
+              <div class="justify-end group_65">
+                <img
+                  src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266510d5a7e3f0310700f1e/62b11fb8d02982001153151d/16557995337958992441.png"
+                  class="image_25 image_39"
+                />
+                <span class="text_61">2 people</span>
+              </div>
+            </div>
+            <div class="justify-between group_66">
+              <span class="text_62">{{ RoomTypeData[6].price }}/每晚</span>
+              <div class="flex-row group_67">
+                <BookButton
+                  :description="roomDescription.bigroom"
+                  :room="RoomTypeData[6]"
+                  :images="bigroom"
+                />
+                <span class="text_64">{{ RoomTypeData[0].price }}/每晚</span>
+              </div>
+              <BookButton
+                :description="roomDescription.singleroom"
+                :room="RoomTypeData[0]"
+                style="margin-top: 4px"
+                :images="singleroom"
+              />
             </div>
           </div>
           <div class="justify-between section_7">
-            <div class="flex-col items-start group_68">
+            <div style="display: grid; grid-template-rows: auto auto">
               <span class="text_6 text_66">Frequent ask qustions</span>
               <span class="text_6 text_67"
                 >如果遇到什么问题，请及时与我们取得联系！</span
@@ -498,18 +727,119 @@
 <script>
 import PurchaseButton from "@/views/smc_components/PurchaseButton.vue";
 import BookButton from "@/views/smc_components/BookButton.vue";
+import axios from "axios";
 export default {
   components: {
     PurchaseButton,
     BookButton,
   },
+  data() {
+    return {
+      isLogin: false,
+      RoomTypeData: [],
+      roomprice: "",
+      roomDescription: {
+        singleroom:
+          "本户型的流线较为简单、实用。具有构成独立却又完整空间，空间功能分布合理的特点；各个房间动静分区较为合理;房间的采光比较好，室内有个大阳台，相当惬意。",
+        president:
+          "总统套房位于酒店九楼，占地面积294㎡。配备有一间书房,一个会议室及一个配备齐全的厨房与可供10人用餐的豪华餐厅，以及健身设施。主人房配有独立淋浴和按摩浴缸,此外房间还有可以进行日光浴的大型私人阳台。入住总统套房的客人可以享有艾登花园酒店的免费服务,如：快速入住及退房,免费早餐,免费上网,会议室、康体中心和室外游泳池，另总统套房还配备了42寸品牌液晶电视、高速互联网接入和无线、个人保险箱, 直拨和带有语音信箱功能的电话、熨斗、烫板、浴缸和热带雨林式的淋浴。柔软舒适的床垫和高密度的棉织品确保您整晚都有甜蜜温馨的睡眠。同时专享我们独具特色的管家式服务。",
+        webroom:
+          "酒店拥有配有最新设备的电竞专属房147间, 在36㎡的精致客房内您不仅可以享受到优雅的家具、42寸品牌液晶电视、高速互联网接入和WIFI、个人保险箱、直拨和带有语音信箱功能的电话、还提供了熨斗、熨板、浴缸和热带雨林式淋浴。柔软舒适的床垫和高密度的棉织品确保您整晚都有甜蜜温馨的睡眠。",
+        bigroom:
+          "将简约融入奢华，让经典成为时尚！把时尚活泼的元素注入客房，将浪漫情趣与精致典雅完美融合。这一刻，品味着法国Lafite酒，带上您的Ipod,让悠扬的音乐完美您如梦幻般的世界吧…",
+        hugeroom:
+          "酒店拥有园景的豪华大床房9间，在47㎡的奢华空间内您可以享受到42寸品牌液晶电视、高速互联网接入和WIFI、个人保险箱、直拨和带有语音信箱功能的电话、还提供了熨斗、熨板、浴缸和热带雨林式淋浴。柔软舒适的床垫和高密度的棉织品确保您整晚都有甜蜜温馨的睡眠。",
+        doubleroom:
+          "酒店拥有园景和湖景的行政双床房5间，在39㎡的宽敞客房内您不仅可以享受到优雅的家具、42寸品牌液晶电视、高速互联网接入和WIFI、个人保险箱、直拨和带有语音信箱功能的电话、还提供了熨斗、熨板、浴缸和热带雨林式淋浴。柔软舒适的床垫和高密度的棉织品确保您整晚都有甜蜜温馨的睡眠。",
+        bisnessroom:
+          "酒店拥有园景和湖景行政套房14间，在82㎡的奢华区域内您不仅可以享受到优雅的家具、42寸品牌液晶电视、高速互联网接入和WIFI、个人保险箱、直拨和带有语音信箱功能的电话、还提供了熨斗、熨板、浴缸和热带雨林式淋浴。柔软舒适的床垫和高密度的棉织品确保您整晚都有甜蜜温馨的睡眠。",
+        copleroom:
+          "酒店拥有湖景高级双人房100间，在39㎡的宽敞客房内您不仅可以享受到优雅的家具、42寸品牌液晶电视、高速互联网接入和WIFI、个人保险箱、直拨和带有语音信箱功能的电话、还提供了熨斗、熨板、浴缸和热带雨林式淋浴。柔软舒适的床垫和高密度的棉织品确保您整晚都有甜蜜温馨的睡眠。",
+      },
+      president: [
+        require("@/img/rooms/bosroom/06.jpg"),
+        require("@/img/rooms/bosroom/01.jpg"),
+        require("@/img/rooms/bosroom/02.jpg"),
+        require("@/img/rooms/bosroom/03.jpg"),
+        require("@/img/rooms/bosroom/04.jpg"),
+        require("@/img/rooms/bosroom/05.jpg"),
+        require("@/img/rooms/bosroom/07.jpg"),
+      ],
+      webroom: [
+        require("@/img/rooms/webroom/01.jpg"),
+        require("@/img/rooms/webroom/02.jpg"),
+        require("@/img/rooms/webroom/03.jpg"),
+        require("@/img/rooms/webroom/04.jpg"),
+        require("@/img/rooms/webroom/05.jpg"),
+      ],
+      bigroom: [
+        require("@/img/rooms/bigroom/04.jpg"),
+        require("@/img/rooms/bigroom/02.jpg"),
+        require("@/img/rooms/bigroom/03.jpg"),
+        require("@/img/rooms/bigroom/01.jpg"),
+        require("@/img/rooms/bigroom/05.jpg"),
+        require("@/img/rooms/bigroom/06.jpg"),
+      ],
+      singleroom: [
+        require("@/img/rooms/singleroom/06.jpg"),
+        require("@/img/rooms/singleroom/02.jpg"),
+        require("@/img/rooms/singleroom/03.jpg"),
+        require("@/img/rooms/singleroom/04.jpg"),
+        require("@/img/rooms/singleroom/05.jpg"),
+        require("@/img/rooms/singleroom/01.jpg"),
+      ],
+      hugeroom: [
+        require("@/img/rooms/hugeroom/03.jpg"),
+        require("@/img/rooms/hugeroom/02.jpg"),
+        require("@/img/rooms/hugeroom/01.jpg"),
+        require("@/img/rooms/hugeroom/04.jpg"),
+      ],
+      doubleroom: [
+        require("@/img/rooms/doubleroom/01.jpg"),
+        require("@/img/rooms/doubleroom/02.jpg"),
+        require("@/img/rooms/doubleroom/03.jpg"),
+        require("@/img/rooms/doubleroom/04.jpg"),
+      ],
+      bisnessroom: [
+        require("@/img/rooms/bisnessroom/01.jpg"),
+        require("@/img/rooms/bisnessroom/02.jpg"),
+        require("@/img/rooms/bisnessroom/03.jpg"),
+        require("@/img/rooms/bisnessroom/04.jpg"),
+        require("@/img/rooms/bisnessroom/05.jpg"),
+        require("@/img/rooms/bisnessroom/06.jpg"),
+      ],
+      copleroom: [
+        require("@/img/rooms/copleroom/01.jpg"),
+        require("@/img/rooms/copleroom/02.jpg"),
+        require("@/img/rooms/copleroom/03.jpg"),
+        require("@/img/rooms/copleroom/04.jpg"),
+      ],
+    };
+  },
   methods: {
+    loadRoomType() {
+      axios.get("http://localhost:8090/op/room-type").then((res) => {
+        this.RoomTypeData = res.data.data;
+        console.log(this.RoomTypeData);
+      });
+    },
     goUp() {
       this.$refs.showHome.scrollIntoView({ behavior: "smooth" });
     },
     bookHotel() {
       this.$refs.bookHotel.scrollIntoView({ behavior: "smooth" });
     },
+    logOut() {
+      sessionStorage.clear();
+      this.isLogin = false;
+      this.$router.push("/");
+    },
+  },
+  created() {
+    this.loadRoomType();
+    if (sessionStorage.getItem("customerphone") !== null) {
+      this.isLogin = true;
+    }
   },
 };
 </script>
@@ -519,6 +849,54 @@ export default {
 ** 请将全局样式拷贝到项目的全局 CSS 文件或者当前页面的顶部 **
 ** 否则页面将无法正常显示                                  **
 ************************************************************/
+.userInfo:hover {
+  transform: scale(1.4);
+}
+.centerGroup {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-items: center;
+  margin-top: 8%;
+}
+.viewer {
+  width: 580px;
+  height: 360px;
+  overflow-y: hidden;
+}
+.logout {
+  background: linear-gradient(
+    180deg,
+    rgba(24, 32, 79, 0.4) 0%,
+    rgba(24, 32, 79, 0.25) 100%
+  );
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(40px);
+  border-radius: 30px;
+  padding: 10px;
+  margin-left: 30%;
+  width: 140px;
+}
+.logout:hover {
+  transform: translateX(5px);
+}
+.OutWrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+}
+.logOutText {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  /* or 19px */
+  color: #ffffff;
+}
 .ContentWrapper {
   display: grid;
   grid-template-rows: auto auto;
@@ -561,6 +939,7 @@ body {
   flex-shrink: 0;
   border: none;
   text-decoration: none;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .flex-row {
@@ -605,8 +984,11 @@ body {
 }
 
 .items-start {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-items: center;
+  margin-top: 8%;
 }
 
 .items-center {
@@ -690,8 +1072,8 @@ body {
 
 .image_21 {
   flex: 1 1 580px;
-  width: 580px;
-  height: 360px;
+  height: 100%;
+  width: 100%;
 }
 
 .image_23 {
@@ -1849,6 +2231,8 @@ body {
 
 .RightButtons {
   cursor: pointer;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 .RightButtons,
 .RightButtons * {

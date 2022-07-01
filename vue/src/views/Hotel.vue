@@ -2,13 +2,13 @@
   <div>
     <div style="margin: 10px 0">
       <el-table :data="RoomTypeData" style="width: 100%" border>
-        <el-table-column prop="roomtypeno" label="房间类型标号" width="120">
+        <el-table-column prop="typeId" label="房间类型标号" width="120">
         </el-table-column>
-        <el-table-column prop="roomtypename" label="房间类型" width="120">
+        <el-table-column prop="roomType" label="房间类型" width="120">
         </el-table-column>
-        <el-table-column prop="roomnumber" label="房间余量" width="120">
+        <el-table-column prop="rest" label="房间余量" width="120">
         </el-table-column>
-        <el-table-column prop="roomprice" label="房间价格" width="120">
+        <el-table-column prop="price" label="房间价格" width="120">
         </el-table-column>
         <el-table-column label="操作" width="160">
           <template slot-scope="orderscope">
@@ -16,10 +16,8 @@
               size="mini"
               round
               type="primary"
-              @click="
-                order(orderscope.row.roomtypename, orderscope.row.roomprice)
-              "
-              v-if="orderscope.row.roomnumber <= 0"
+              @click="order(orderscope.row.roomType, orderscope.row.price)"
+              v-if="orderscope.row.rest === 0"
               disabled
             >
               下单
@@ -28,9 +26,7 @@
               size="mini"
               round
               type="primary"
-              @click="
-                order(orderscope.row.roomtypename, orderscope.row.roomprice)
-              "
+              @click="order(orderscope.row.roomType, orderscope.row.price)"
               v-else
             >
               下单
@@ -118,9 +114,9 @@ export default {
   },
   methods: {
     loadRoomType() {
-      request.get("/roomtype/allroomtype").then((res) => {
-        console.log(res);
-        this.RoomTypeData = res.data;
+      axios.get("http://localhost:8090/op/room-type").then((res) => {
+        console.log(res.data.data);
+        this.RoomTypeData = res.data.data;
       });
     },
     order(roomtypename, roomprice) {
@@ -186,6 +182,7 @@ export default {
     PlaceOrder() {
       console.log(this.OrderForm);
       request.post("/roomorder/xiadan", this.OrderForm).then((res) => {
+        console.log("=======xiadan in======");
         if (res.code === "0") {
           this.$message({
             type: "success",
@@ -197,7 +194,6 @@ export default {
             message: res.msg,
           });
         }
-        console.log(res);
       });
       axios.get("http://localhost:8090/alipay/pay", {}).then((res) => {
         //返回成功调用此方法

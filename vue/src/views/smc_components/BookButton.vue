@@ -1,6 +1,11 @@
 <template>
   <div @click="book" style="position: relative">
-    <ShowErr ref="errors" />
+    <ShowErr
+      :roomType="room"
+      :description="description"
+      :images="images"
+      ref="errors"
+    />
     <div class="flex-col items-center text-wrapper_6 view_2 Wrapper">
       <span class="text_50">马上预定</span>
     </div>
@@ -10,6 +15,7 @@
 <script>
 import ShowErr from "./ShowErr.vue";
 export default {
+  props: ["room", "description", "images"],
   components: {
     ShowErr,
   },

@@ -162,21 +162,19 @@ export default {
               console.log(this.form.customerphone);
               //sessionStorage.setItem("ms_username", ret.data.username);
               setTimeout(() => {
-                this.$router.push("/hotel"); //登录成功后跳转页面
+                this.$router.push("/"); //登录成功后跳转页面
                 this.$message({
                   type: "success",
                   message: "登陆成功",
                 });
               }, 2000);
             } else {
-              setTimeout(() => {
-                this.$refs.Load.shoutDown();
-                this.$refs.Blur.style.display = "none";
-                this.$message({
-                  type: "error",
-                  message: res.msg,
-                });
-              }, 1200);
+              this.$refs.Load.shoutDown();
+              this.$refs.Blur.style.display = "none";
+              this.$message({
+                type: "error",
+                message: res.msg,
+              });
             }
           });
         }

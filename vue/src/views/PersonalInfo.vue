@@ -12,8 +12,8 @@
       </el-form-item>
       <el-form-item label="性别">
         <el-radio-group v-model="form.customersex" size="medium">
-          <el-radio border label="1"></el-radio>
-          <el-radio border label="0"></el-radio>
+          <el-radio border label="1">男</el-radio>
+          <el-radio border label="0">女</el-radio>
         </el-radio-group>
       </el-form-item>
       <el-form-item>
@@ -58,7 +58,6 @@ export default {
             customersex: this.form.customersex,
             customername: this.form.customername,
             customerid: this.form.customerid,
-            customerphone: this.form.customerphone,
           },
         })
         .then((res) => {
