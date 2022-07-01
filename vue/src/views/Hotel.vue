@@ -195,7 +195,9 @@ export default {
           });
         }
       });
-      axios.get("http://localhost:8090/alipay/pay", {}).then((res) => {
+      axios.get("http://localhost:8090/alipay/pay", {params : {num : this.roomprice,
+      name : this.OrderForm.roomtypename
+      }}).then((res) => {
         //返回成功调用此方法
         //console.info(res);
         document.querySelector("body").innerHTML = res.data; //查找到当前页面的body，将后台返回的form替换掉他的内容
