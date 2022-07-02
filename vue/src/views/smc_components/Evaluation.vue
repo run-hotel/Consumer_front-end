@@ -2,14 +2,13 @@
   <div style="padding-left: 10px">
     <el-table :data="tableData" stripe style="width: calc(100vw - 220px)">
       <el-table-column prop="orderno" label="ID" sortable> </el-table-column>
-
       <el-table-column prop="customerphone" label="手机号"> </el-table-column>
       <el-table-column prop="inttime" label="入住时间"> </el-table-column>
       <el-table-column prop="outtime" label="退房时间"> </el-table-column>
       <el-table-column prop="roomtypename" label="房间类型"> </el-table-column>
       <el-table-column prop="orderstatus" label="入住状态">
         <template slot-scope="orderstatusscope">
-          <span v-if="orderstatusscope.row.outtime >= new Date()">已退房</span>
+          <span v-if="orderstatusscope.row.outtime < '2022-07-03'">已退房</span>
           <span v-else>入住中</span>
         </template>
       </el-table-column>
@@ -19,31 +18,44 @@
             size="mini"
             round
             type="primary"
-            v-if="orderstatusscope.row.outtime != new Date()"
+            v-if="
+              orderstatusscope.row.outtime <= '2022-07-03' &&
+              !checkIsEvaluated(orderstatusscope.row.orderno)
+            "
             @click="
               passData(
                 orderstatusscope.row.roomtypename,
-                orderstatusscope.row.inttime
+                orderstatusscope.row.inttime,
+                orderstatusscope.row.orderno
               )
             "
             >点击评价</el-button
           >
+          <el-button
+            size="mini"
+            round
+            type="success"
+            v-else-if="checkIsEvaluated(orderstatusscope.row.orderno)"
+            @click="
+              showEvaluation(
+                orderstatusscope.row.roomtypename,
+                orderstatusscope.row.inttime,
+                orderstatusscope.row.orderno
+              )
+            "
+            >点击查看
+          </el-button>
           <el-button size="mini" plain type="info" disabled v-else
             >入住中,退房后才能评价</el-button
           >
         </template>
       </el-table-column>
     </el-table>
-    <el-drawer
-      title="用户评价"
-      :visible.sync="drawer"
-      :before-close="handleClose"
-      size="50%"
-    >
+    <el-drawer title="用户评价" :visible.sync="drawer" size="50%">
       <el-form ref="form" :model="evalution" label-width="80px">
         <el-steps
           :space="300"
-          :active="2"
+          :active="this.isEvaluated ? 3 : 2"
           finish-status="success"
           style="padding: 50px"
         >
@@ -70,9 +82,19 @@
         <el-form-item label="入住评价">
           <el-input
             size="medium"
+            v-if="!this.isEvaluated"
             v-model="evalution.description"
             type="textarea"
             placeholder="请输入内容"
+            :autosize="{ minRows: 8 }"
+            style="width: 600px"
+          ></el-input>
+          <el-input
+            size="medium"
+            v-else
+            disabled
+            v-model="evalution.description"
+            type="textarea"
             :autosize="{ minRows: 8 }"
             style="width: 600px"
           ></el-input>
@@ -81,11 +103,20 @@
           <el-rate
             v-model="evalution.value"
             :colors="['#99A9BF', '#F7BA2A', '#FF9900']"
+            v-if="!this.isEvaluated"
+          >
+          </el-rate>
+          <el-rate
+            v-model="defaultValue"
+            v-else
+            disabled
+            show-score
+            text-color="#ff9900"
           >
           </el-rate>
         </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="onSubmit">发布评论</el-button>
+        <el-form-item v-if="!this.isEvaluated">
+          <el-button type="primary" @click="onSubmit()">发布评论</el-button>
         </el-form-item>
       </el-form>
     </el-drawer>
@@ -111,11 +142,16 @@ export default {
         roomType: "",
         inittime: "",
         description: "",
+        id: 0,
         value: null,
       },
       customerphone: sessionStorage.getItem("customerphone"),
-      customerid: "",
+      customerid: 1,
       isEvaluated: false,
+      gettedevalutions: [],
+      defaultValue: 4,
+      updataID: 0,
+      showOK: false,
     };
   },
   created() {
@@ -137,33 +173,61 @@ export default {
       else if (this.evalution.roomType === "豪华大床房")
         this.evalution.roomType = 7;
       else this.evalution.roomType = 8;
+      console.log(
+        "===update===",
+        typeof parseInt(this.customerid),
+        this.evalution.description
+      );
       axios
-        .get("http://localhost:8090/comment/insert", {
+        .get("http://localhost:8090/comment/update", {
           params: {
-            id: this.customerid,
-            typeId: this.evalution.roomType,
+            id: this.updataID,
             content: this.evalution.description,
           },
         })
         .then((res) => {
-          console.log(res);
+          console.log("===comment===", res);
         });
+      this.$message({
+        showClose: true,
+        message: "发布成功",
+        type: "success",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     },
-    passData(roomType, inttime) {
+    passData(roomType, inttime, id) {
       this.drawer = true;
       this.evalution.roomType = roomType;
       this.evalution.inittime = inttime;
+      this.updataID = id;
+      this.showOK = true;
+      this.evalution.description = "";
+      this.isEvaluated = false;
     },
-    handleClose(done) {
-      this.$confirm("确认关闭？关闭后数据会消失")
-        .then((_) => {
-          this.evalution.roomType = "";
-          this.evalution.inittime = "";
-          this.evalution.description = "";
-          this.evalution.value = null;
-          done();
-        })
-        .catch((_) => {});
+    showEvaluation(roomType, inttime, id) {
+      this.evalution.roomType = roomType;
+      this.evalution.inittime = inttime;
+      console.log("===tableData===", this.tableData);
+      axios.get("http://localhost:8090/comment/getAlll").then((res) => {
+        const AllData = res.data.data;
+        AllData.forEach((data) => {
+          if (data.id == this.evalution.id) {
+            this.evalution.description = data.content;
+            if (this.evalution.description == this.customerid)
+              this.evalution.description = "";
+            console.log(
+              "===description===",
+              this.evalution.description,
+              data.content
+            );
+          }
+        });
+      });
+      this.evalution.id = id;
+      this.isEvaluated = true;
+      this.drawer = true;
     },
     load() {
       request
@@ -174,9 +238,9 @@ export default {
           },
         })
         .then((res) => {
-          console.log(res);
           this.tableData = res.data;
           this.total = res.data.length;
+          console.log("===tableData===", this.tableData);
         });
       request
         .get("/customer/selectcustomer", {
@@ -189,9 +253,29 @@ export default {
           axios
             .get(`http://localhost:8090/comment/get/${res.data.customerid}`)
             .then((res) => {
-              console.log(res);
+              console.log("===gettedevalutions===", res.data.data);
+              this.gettedevalutions = res.data.data;
             });
         });
+    },
+    checkIsEvaluated(userId) {
+      var f = 1;
+      const length = this.gettedevalutions.length;
+      const evaluation = this.gettedevalutions;
+      for (var i = 0; i < length; i++) {
+        if (evaluation[i].id == userId) {
+          // alert(evaluation[i].content);
+          if (
+            evaluation[i].content == null ||
+            evaluation[i].content == this.customerid ||
+            evaluation[i].content == ""
+          ) {
+            f = 0;
+          }
+        }
+      }
+      console.log(f);
+      return f;
     },
   },
 };

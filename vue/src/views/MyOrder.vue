@@ -28,6 +28,7 @@
 
 <script>
 import request from "@/utils/request";
+import axios from "axios";
 export default {
   components: {},
   data() {
@@ -63,6 +64,9 @@ export default {
             if (element.orderstatus == "2") this.showCard = true;
           });
         });
+      axios.get("http://localhost:8090/comment/getAlll").then((res) => {
+        console.log(res);
+      });
     },
   },
 };

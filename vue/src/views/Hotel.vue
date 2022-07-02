@@ -16,7 +16,6 @@
               size="mini"
               round
               type="primary"
-              @click="order(orderscope.row.roomType, orderscope.row.price)"
               v-if="orderscope.row.rest === 0"
               disabled
             >
@@ -80,8 +79,10 @@
           </el-form-item>
         </el-form>
         <span slot="footer" class="dialog-footer">
-          <el-button @click="dialogVisible = false">取 消</el-button>
-          <el-button type="primary" @click="PlaceOrder">确 定</el-button>
+          <el-button @click="dialogVisible = false">取消</el-button>
+          <el-button type="primary" @click="PlaceOrder(OrderForm.roomtypename)"
+            >确定</el-button
+          >
         </span>
       </el-dialog>
     </div>
@@ -107,6 +108,12 @@ export default {
         orderstatus: 1,
       },
       roomprice: "",
+      evaluationNumber: 0,
+      updataEvaluation: {
+        userId: "",
+        roomType: "",
+        comment: "",
+      },
     };
   },
   created() {
@@ -118,6 +125,16 @@ export default {
         console.log(res.data.data);
         this.RoomTypeData = res.data.data;
       });
+      request
+        .get("/customer/selectcustomer", {
+          params: {
+            customerphone: sessionStorage.getItem("customerphone"),
+          },
+        })
+        .then((res) => {
+          this.updataEvaluation.userId = res.data.customerid;
+          // console.log(this.updataEvaluation.userId);
+        });
     },
     order(roomtypename, roomprice) {
       if (this.RoomTypeData.roomnumber <= 0) {
@@ -137,50 +154,43 @@ export default {
             message: "请您先登录",
           });
         } else {
-          this.OrderForm.orderno = this.randomCoding();
+          this.OrderForm.orderno = this.getEvaluation();
           this.dialogVisible = true;
         }
       }
     },
-    randomCoding() {
-      //创建26个字母数组
-      var arr = [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "L",
-        "M",
-        "N",
-        "O",
-        "P",
-        "Q",
-        "R",
-        "S",
-        "T",
-        "U",
-        "V",
-        "W",
-        "X",
-        "Y",
-        "Z",
-      ];
-      var idvalue = "";
-      const n = 10;
-      for (var i = 0; i < n; i++) {
-        idvalue += arr[Math.floor(Math.random() * 26)];
-      }
-      return idvalue;
+    getEvaluation() {
+      axios.get("http://localhost:8090/comment/getAlll").then((res) => {
+        const evaluation = res.data.data;
+        const length = evaluation.length;
+        this.evaluationNumber = evaluation[length - 1].id + 1;
+      });
+      return this.evaluationNumber;
     },
-    PlaceOrder() {
-      console.log(this.OrderForm);
+    PlaceOrder(roomtypename) {
+      console.log(roomtypename);
+      if (roomtypename === "单人房") this.updataEvaluation.roomType = 1;
+      else if (roomtypename === "豪华套房") this.updataEvaluation.roomType = 2;
+      else if (roomtypename === "总统房") this.updataEvaluation.roomType = 3;
+      else if (roomtypename === "双人房") this.updataEvaluation.roomType = 4;
+      else if (roomtypename === "情侣房") this.updataEvaluation.roomType = 5;
+      else if (roomtypename === "商务大床房")
+        this.updataEvaluation.roomType = 6;
+      else if (roomtypename === "豪华大床房")
+        this.updataEvaluation.roomType = 7;
+      else this.updataEvaluation.roomType = 8;
+      axios
+        .get("http://localhost:8090/comment/insert", {
+          params: {
+            id: this.updataEvaluation.userId,
+            typeId: this.updataEvaluation.roomType,
+            content: " ",
+          },
+        })
+        .then((res) => {
+          console.log(res);
+        });
+      console.log(this.updataEvaluation.roomType);
       request.post("/roomorder/xiadan", this.OrderForm).then((res) => {
         console.log("=======xiadan in======");
         if (res.code === "0") {
@@ -195,14 +205,16 @@ export default {
           });
         }
       });
-      axios.get("http://localhost:8090/alipay/pay", {params : {num : this.roomprice,
-      name : this.OrderForm.roomtypename
-      }}).then((res) => {
-        //返回成功调用此方法
-        //console.info(res);
-        document.querySelector("body").innerHTML = res.data; //查找到当前页面的body，将后台返回的form替换掉他的内容
-        document.forms[0].submit(); //执行submit表单提交，让页面重定向，跳转到支付宝页面
-      });
+      axios
+        .get("http://localhost:8090/alipay/pay", {
+          params: { num: this.roomprice, name: this.OrderForm.roomtypename },
+        })
+        .then((res) => {
+          //返回成功调用此方法
+          //console.info(res);
+          document.querySelector("body").innerHTML = res.data; //查找到当前页面的body，将后台返回的form替换掉他的内容
+          document.forms[0].submit(); //执行submit表单提交，让页面重定向，跳转到支付宝页面
+        });
     },
   },
 };
