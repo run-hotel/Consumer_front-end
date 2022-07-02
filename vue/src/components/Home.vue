@@ -860,6 +860,7 @@ export default {
   margin-top: 8%;
 }
 .viewer {
+  cursor: zoom-in;
   width: 580px;
   height: 360px;
   overflow-y: hidden;

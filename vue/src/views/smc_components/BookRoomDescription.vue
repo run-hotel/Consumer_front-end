@@ -8,15 +8,20 @@
           {{ description }}
         </div>
       </div>
-      <viewer style="overflow: hidden; height: 500px; width: 1100px">
-        <img
-          v-for="(img, index) in images"
-          :key="index"
-          :src="img"
-          style="transform: scale(0.8); border-radius: 20px"
-          alt="textimg"
-        />
-      </viewer>
+      <el-carousel style="width: 650px" height="450px">
+        <el-carousel-item
+          v-for="img in images"
+          :key="img"
+          style="border-radius: 20px"
+        >
+          <el-image
+            :fit="fit"
+            :src="img"
+            alt="images"
+            :preview-src-list="images"
+          />
+        </el-carousel-item>
+      </el-carousel>
     </div>
   </div>
 </template>
@@ -31,9 +36,12 @@ export default {
 .AllWrapper {
   padding: 30px;
 }
+.viewer:hover {
+  transform: scale(0.9);
+}
 .RoomWrapper {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: 30px 400px 720px;
   align-items: center;
   justify-items: center;
   gap: 100px;

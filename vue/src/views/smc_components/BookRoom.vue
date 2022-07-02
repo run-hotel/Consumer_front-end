@@ -36,7 +36,7 @@
       />
       <BookRoomPrice :price="price" />
     </div>
-    <BackButton style="margin-left: 44%; margin-top: 40px" />
+    <BackButton style="margin-left: 44%; margin-bottom: 60px" />
   </div>
 </template>
 
