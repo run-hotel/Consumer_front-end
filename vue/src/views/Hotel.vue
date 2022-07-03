@@ -95,6 +95,12 @@ import axios from "axios";
 export default {
   data() {
     return {
+      pickerOptions: {
+        disabledDate(time) {
+          return time.getTime() < Date.now() - 8.64e7; //禁用以前的日期，今天不禁用
+          // return date.getTime() <= Date.now();    //禁用今天以及以前的日期
+        },
+      },
       i: 0,
       dialogVisible: false,
       RoomTypeForm: { roomtypeno: "", price: 0.0 },
@@ -196,7 +202,7 @@ export default {
         if (res.code === "0") {
           this.$message({
             type: "success",
-            message: "预定成功",
+            message: "创建订单成功，正在前往支付宝",
           });
         } else {
           this.$message({

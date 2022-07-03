@@ -37,13 +37,6 @@
             <span class="text text_4">新闻公告</span>
           </div>
         </router-link>
-        <div class="flex-row group_11 bottom">
-          <img
-            src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/6266504e5a7e3f03106ffb8e/6274b8cb3051170011fb085d/16525173524698910076.png"
-            class="image_1"
-          />
-          <span class="text text_15">个人信息</span>
-        </div>
       </div>
     </div>
     <img
@@ -65,7 +58,7 @@
         <span class="text_6">注册用户</span>
         <div class="flex-col items-start group_5">
           <span class="text_7">让所有热爱生活的人</span>
-          <span class="text_8">安享艾迪花园理想之国 。</span>
+          <span class="text_8">安享艾登花园理想之国 。</span>
         </div>
         <div class="flex-col group_6">
           <el-form-item prop="customerphone">

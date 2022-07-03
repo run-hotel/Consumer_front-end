@@ -162,7 +162,7 @@ export default {
         if (res.code === "0") {
           this.$message({
             type: "success",
-            message: "预定成功",
+            message: "创建订单成功，正在前往支付宝",
           });
         } else {
           this.$message({

@@ -1,7 +1,6 @@
 <template>
   <div id="Wrapper03">
     <div id="HeadeText">更多内容，敬请期待</div>
-    <div id="NotYet">实际上还没做好</div>
     <div class="ButtonWrapper01">
       <button class="BUtton" @click="prev">
         <span class="back"> 点击返回</span>
@@ -46,15 +45,6 @@ export default {
   line-height: 42px;
   align-items: center;
   color: #181818;
-}
-#NotYet {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
-  text-decoration-line: line-through;
-  color: #7777a9;
 }
 .BUtton {
   width: 270px;

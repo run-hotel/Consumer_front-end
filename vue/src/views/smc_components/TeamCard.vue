@@ -7,7 +7,7 @@
           Hey,Welcome
         </div>
         <div id="ACenWrapper">关于本团队</div>
-        <div id="BCenWrapper">艾迪花园携手上分小组倾情打造</div>
+        <div id="BCenWrapper">艾登花园携手上分小组倾情打造</div>
         <div id="CCenWrapper">Can Can Need</div>
         <button><p>关于"上分小组"那些事</p></button>
       </div>

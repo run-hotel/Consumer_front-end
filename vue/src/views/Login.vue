@@ -5,7 +5,7 @@
     <div class="flex-col group">
       <div class="flex-col items-start group_15 view-dL5R0iFd">
         <span class="text_1 Text">Log In...</span><br />
-        <span class="text_1 Text">艾迪花园酒店</span>
+        <span class="text_1 Text">艾登花园酒店</span>
         <span class="text_2 Text">Be Love Be here</span>
       </div>
       <div class="flex-col items-start group_2">

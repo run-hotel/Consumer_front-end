@@ -3,7 +3,7 @@
     <div class="ContentWrapper">
       <div class="TopWrapper">
         <img class="farmIcon" src="@/img/farmIcon.svg" alt="farmIcon" />
-        <div class="Title">在线农庄 x 艾迪花园</div>
+        <div class="Title">在线农庄 x 艾登花园</div>
       </div>
       <div class="CenterWrapper">
         <div class="description">
@@ -13,7 +13,7 @@
           </div>
           <div class="Action">现与在线农庄合作</div>
           <div class="activedescription">
-            <div class="topdescription">在线农庄 x 艾迪花园</div>
+            <div class="topdescription">在线农庄 x 艾登花园</div>
             <div class="topdescription">强强联手，只为您提供更好服务</div>
           </div>
           <div class="ButtonWrapper">

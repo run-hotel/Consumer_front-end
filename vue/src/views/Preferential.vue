@@ -4,7 +4,7 @@
       <div class="ContentWrapper">
         <div class="TextWrapper">
           <div class="title">
-            艾迪花园
+            艾登花园
             <iframe
               src="https://embed.lottiefiles.com/animation/7893"
               style="position: absolute; left: 50px; border: none"
@@ -72,7 +72,7 @@
             <div class="flex-col group_3">
               <span class="text_10">75,000 人</span>
               <span class="text_11">
-                艾迪花园酒店崇尚“热情加激情，满意加惊喜，在客人的惊喜中，找到富有的人生。”服务理念，全力营造安全、舒适和便捷的亲情氛围，突出精致、精细、精美的服务品位，尽显时尚、简约、休闲的现代生活，“艾迪无锡、创意无限”。
+                艾登花园酒店崇尚“热情加激情，满意加惊喜，在客人的惊喜中，找到富有的人生。”服务理念，全力营造安全、舒适和便捷的亲情氛围，突出精致、精细、精美的服务品位，尽显时尚、简约、休闲的现代生活，“艾登无锡、创意无限”。
               </span>
             </div>
           </div>

@@ -72,10 +72,10 @@
           <div class="image_6">
             <div class="ContentWrapper">
               <div class="TopTip">
-                <span class="topTitle">艾迪花园酒店</span>
-                <span class="description">“艾迪无锡 · 创意无限”</span>
+                <span class="topTitle">艾登花园酒店</span>
+                <span class="description">“艾登无锡 · 创意无限”</span>
                 <span class="description"
-                  >艾迪花园酒店是您追求完美的理想之园</span
+                  >艾登花园酒店是您追求完美的理想之园</span
                 >
                 <span class="description">“因为爱，所以来”</span>
               </div>
@@ -134,7 +134,7 @@
           <div class="flex-col section_4">
             <span class="text_6 text_18">主要介绍</span>
             <span class="text_6 text_19" style="position: relative"
-              >艾迪花园酒店带您开启品质生活<iframe
+              >艾登花园酒店带您开启品质生活<iframe
                 src="https://embed.lottiefiles.com/animation/71540"
                 style="position: absolute"
               ></iframe

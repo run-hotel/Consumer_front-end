@@ -12,7 +12,7 @@
         <div id="TextWrapper">
           <div id="Title">hotel</div>
           <div id="description">
-            让所有热爱生活的人， 安享艾迪花园理想之园。
+            让所有热爱生活的人， 安享艾登花园理想之园。
           </div>
         </div>
       </div>
