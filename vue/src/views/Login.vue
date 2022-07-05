@@ -167,7 +167,7 @@ export default {
                   type: "success",
                   message: "登陆成功",
                 });
-              }, 2000);
+              }, 1500);
             } else {
               this.$refs.Load.shoutDown();
               this.$refs.Blur.style.display = "none";
